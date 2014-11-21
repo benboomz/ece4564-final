@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+    <title>TeamDanier</title>
+</head>
+<style>
+
+body {
+    background-color: #000;
+}
+
+a {
+    color: #c0c0c0;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #00ddff;
+}
+
+#section {
+    padding-top:30px;
+    padding-left:100px;
+    width:1000px;
+    position:relative;
+    margin-left: 200px;
+    overflow:auto;
+    overflow-y:hidden; 
+    color: #c0c0c0;
+    
+    -moz-column-count: 2;
+    -moz-column-gap: 15px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 15px;
+}
+
+#nav {
+    height: 100%;
+    width:60px;
+    position:fixed;
+    color: #000;
+    margin-left: 50px;
+    -webkit-transition: all 0.5s ease-out; 
+    -moz-transition: all 0.5s ease-out; 
+    -o-transition: all 0.5s ease-out;
+}
+
+#blackbox1 {
+    height: 120px;
+    width:85px;
+    left:0px;
+    margin-top:70px;
+    margin-left:35px;
+    background-color: #000;
+    position:fixed;
+    color: #000;
+    -webkit-transition: all 0.5s ease-out; 
+    -moz-transition: all 0.5s ease-out; 
+    -o-transition: all 0.5s ease-out;
+}
+
+#blackbox2 {
+    height: 120px;
+    width:85px;
+    left:0px;
+    margin-top:40px;
+    margin-left:35px;
+    background-color: #000;
+    position:fixed;
+    color: #000;
+    -webkit-transition: all 0.5s ease-out; 
+    -moz-transition: all 0.5s ease-out; 
+    -o-transition: all 0.5s ease-out;
+}
+#sidebar {
+    height: 10%;
+    width:20px;
+    left:0px;
+    background-color: #c0c0c0;
+    position:fixed;
+    color: #000;
+    -webkit-transition: all 0.5s ease-out; 
+    -moz-transition: all 0.5s ease-out; 
+    -o-transition: all 0.5s ease-out;
+}
+
+#sidebar:hover {
+    height: 260px;
+    width:160px;
+    left:0px;
+    background-color: #c0c0c0;
+    position:fixed;
+    color: #000;
+    border: solid #fff 1px;
+    -webkit-transition: all 0.5s ease-out; 
+    -moz-transition: all 0.5s ease-out; 
+    -o-transition: all 0.5s ease-out;
+}
+
+#sidebartext {
+    height:220px;
+    width:110px;
+    margin:20px;
+    padding-left:5px;
+    padding-right:5px;
+    text-align: center;
+    border: solid #000 1px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size:10px;
+}
+
+#posts {
+    width:400px;
+    height:auto;
+    padding-bottom: 30px;
+    color:#c0c0c0;
+}
+
+#posts img {
+    width:400px;
+    height:auto;
+}
+
+#posts img:hover {
+    width:400px;
+    background-image:url('http://coloreminder.com/color/00ddff.png');
+    height:auto;
+}
+
+#textposts {
+    font-size:10px;
+    font-family:; "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+
+
+</style>
+
+<body>
+
+<div id="sidebar">
+    <!--
+    <div id="blackbox1"></div> -->
+    <div id="sidebartext">
+    <p></p>
+    <p>Danier May</p>
+    <p>Virginia Tech '14</p>
+    
+    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis faucibus odio, ut vulputate ante gravida ut. Phasellus vitae magna cursus, imperdiet nulla sit amet, dignissim velit.</p>
+    
+   
+    </div>
+    <!--
+     <div id="blackbox2"></div>
+     -->
+</div>
+
+<div id = "nav">
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br
+<br></br>
+<br></br>
+<a href="https://www.facebook.com/dmay8"  style="font-size: 20px">danier</a> <br></br>
+<br></br>
+<a href="http://google.com"  style="font-size: 12px">g</a> 
+<p></p>
+<a href="https://facebook.com/"  style="font-size: 12px">f</a> 
+<p></p>
+<a href="http://youtube.com"  style="font-size: 12px">y</a> 
+<p></p>
+<a href="http://weather.com"  style="font-size: 12px">w</a> 
+<p></p>
+<a href="http://scholar.vt.edu"  style="font-size: 12px">s</a> 
+</div>
+
+<div id="section">
+
+
+</html> 
+
+
