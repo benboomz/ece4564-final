@@ -8,7 +8,8 @@ class ClockPage(Resource):
     def render_GET(self, request):
         with open ("html.txt", "r") as myfile:
             data=myfile.read()
-        return data ##% (time.ctime(),)
+        old = data.replace("sleepcycles", str(time.ctime()))
+        return old
 
 resource = ClockPage()
 factory = Site(resource)

@@ -169,7 +169,7 @@ a:hover {
 <br></br>
 <a href="https://www.facebook.com/dmay8"  style="font-size: 20px">danier</a> <br></br>
 <br></br>
-<a href="http://google.com"  style="font-size: 12px">g</a> 
+<a href="http://google.com"  style="font-size: 12px">gs</a> 
 <p></p>
 <a href="https://facebook.com/"  style="font-size: 12px">f</a> 
 <p></p>
@@ -180,7 +180,9 @@ a:hover {
 <a href="http://scholar.vt.edu"  style="font-size: 12px">s</a> 
 </div>
 
-<div id="section">
+<div id="section"> 
+    sleepcycles
+</div>
 
 
 </html> 
