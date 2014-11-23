@@ -61,7 +61,7 @@ reactor.run()
 
 from twisted.internet import reactor, task
 from twisted.web.server import Site
-from twisted.web import server
+from twisted.web import server, rewrite, resource
 from twisted.web.resource import Resource
 import time
  
@@ -74,22 +74,40 @@ class ClockPage(Resource):
         Resource.__init__(self)
      
     def render_GET(self, request):
-        with open ("html.txt", "r") as myfile:
-            data=myfile.read()
-        old = data.replace("sleepcycles", str(time.ctime()))
-        request.write(old)
+        request.write('<b>%s</b><br>' % (time.ctime(),))
         self.presence.append(request)
         return server.NOT_DONE_YET
 
-     
     def __print_time(self):
-        self.presence.remove(p)
-        
         for p in self.presence:
-            with open ("html.txt", "r") as myfile:
-                data=myfile.read()
-            old = data.replace("sleepcycles", str(time.ctime()))
-            p.write(old)
+            rewrite.RewriterResource(p, rewrite.tildeToUsers)
+
+class RewriterResource(resource.Resource):
+    def __init__(self, orig, *rewriteRules):
+        resource.Resource.__init__(self)
+        self.resource = orig
+        self.rewriteRules = list(rewriteRules)
+
+    def _rewrite(self, request):
+        for rewriteRule in self.rewriteRules:
+           rewriteRule(request)
+
+    def getChild(self, path, request):
+        request.postpath.insert(0, path)
+        request.prepath.pop()
+        self._rewrite(request)
+        path = request.postpath.pop(0)
+        request.prepath.append(path)
+        return self.resource.getChildWithDefault(path, request)
+
+    def render(self, request):
+        self._rewrite(request)
+        return self.resource.render(request)
+        
+    def tildeToUsers(request):
+        if request.postpath and request.postpath[0][:1]=='~':
+            request.postpath[:1] = ['users', request.postpath[0][1:]]
+            request.path = '/'+'/'.join(request.prepath+request.postpath)
  
 resource = ClockPage()
 factory = Site(resource)
