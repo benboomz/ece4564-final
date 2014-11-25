@@ -15,10 +15,10 @@ FLAGS = gflags.FLAGS
 # applications
 # The client_id and client_secret can be found in Google Developers Console
 FLOW = OAuth2WebServerFlow(
-    client_id='YOUR_CLIENT_ID',
-    client_secret='YOUR_CLIENT_SECRET',
+    client_id='286518689990-ag723aq5sfftgm3n78imd7pshqk32k0f.apps.googleusercontent.com',
+    client_secret='fI9w_qEyW8WeN8zm672Dk4wy',
     scope='https://www.googleapis.com/auth/calendar',
-    user_agent='YOUR_APPLICATION_NAME/YOUR_APPLICATION_VERSION')
+    user_agent='SMART_ALARM_CLOCK/VER_1.0')
 
 # To disable the local server feature, uncomment the following line:
 # FLAGS.auth_local_webserver = False
@@ -40,4 +40,4 @@ http = credentials.authorize(http)
 # the Google Developers Console
 # to get a developerKey for your own application.
 service = build(serviceName='calendar', version='v3', http=http,
-       developerKey='YOUR_DEVELOPER_KEY')
+       developerKey='AIzaSyD8_uIwOB3Uo144ZPITdC9TJAwUU8IkTkI')
