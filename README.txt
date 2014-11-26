@@ -6,3 +6,18 @@ Smart Alarm Clock
 OAuth
 - implemented using the Python library, sanction
 
+ADXL345:
+
+$ sudo nano /etc/modules
+	add the following lines:
+		i2c-bcm2708
+		i2c-dev
+
+$ sudo nano /etc/modprobe.d/raspi-blacklist.conf
+	# blacklist i2c-bcm2708
+
+$ sudo shutdown -h now
+$ sudo apt-get install python-smbus i2c-tools git-core
+
+$ sudo i2cdetect -y l
+	to see if accelerometer is found on the i2c bus
