@@ -3,8 +3,6 @@ ECE 4564
 
 Smart Alarm Clock
 
-OAuth
-- implemented using the Python library, sanction
 
 ADXL345:
 
@@ -27,3 +25,5 @@ Packages
 
 - gflags
 - google-api-python-client
+- twisted
+- adxl345-python
