@@ -131,17 +131,17 @@ class ClockPage(Resource):
         Resource.__init__(self)
 
     def render_GET(self, request):
-        with open ("home.html", "r") as myfile:
+        with open ("home.html", "r+") as myfile:
             data=myfile.read()
-        old = data.replace("sleepcycles", str(time.ctime()))
-        request.write(old)
+        #old = data.replace("sleepcycles", str(time.ctime()))
+        request.write(data)
         self.presence.append(request)
         request.finish()
         return server.NOT_DONE_YET
      
     def __print_time(self):
         for p in self.presence:
-            with open ("home.html", "r") as myfile:
+            with open ("home.html", "r+") as myfile:
                 data=myfile.read()
             old = data.replace("sleepcycles", str(time.ctime()))
             p.write(old)
@@ -149,6 +149,7 @@ class ClockPage(Resource):
 root = Resource()
 root.putChild('', ClockPage())
 root.putChild("style.css", static.File("style.css"))
+root.putChild("bootstrap", static.File("./bootstrap"))
 factory = Site(root)
 reactor.listenTCP(8888, factory)
 reactor.run() 

@@ -3,10 +3,14 @@
 
 <head>
     <title>TeamDanier</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body>
+<body onload="showTime()">
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
 
 <div id="sidebar">
     <!--
@@ -53,9 +57,21 @@
 
 <div id="section"> 
     sleepcycles
+    <div id="time">
+    </div>
 </div>
 
 </body>
+
+<script>
+    function showTime()
+    {
+        var dateTime = new Date()
+        var string = dateTime.toString().replace("GMT-0500", "")
+        document.getElementById("time").innerHTML = string
+        var t = setTimeout(function(){showTime(), 5000})
+    }
+</script>
 
 </html> 
 
