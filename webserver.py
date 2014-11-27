@@ -118,7 +118,7 @@ reactor.run()
 
 from twisted.internet import reactor, task
 from twisted.web.server import Site
-from twisted.web import server
+from twisted.web import server, static
 from twisted.web.resource import Resource
 import time
  
@@ -126,26 +126,29 @@ class ClockPage(Resource):
     isLeaf = True
     def __init__(self):
         self.presence=[]
-        loopingCall = task.LoopingCall(self.__print_time)
-        loopingCall.start(1, False)
+        #loopingCall = task.LoopingCall(self.__print_time)
+        #loopingCall.start(1, False)
         Resource.__init__(self)
-     
+
     def render_GET(self, request):
-        with open ("html.txt", "r") as myfile:
+        with open ("home.html", "r") as myfile:
             data=myfile.read()
         old = data.replace("sleepcycles", str(time.ctime()))
         request.write(old)
         self.presence.append(request)
+        request.finish()
         return server.NOT_DONE_YET
      
     def __print_time(self):
         for p in self.presence:
-            with open ("html.txt", "r") as myfile:
+            with open ("home.html", "r") as myfile:
                 data=myfile.read()
             old = data.replace("sleepcycles", str(time.ctime()))
             p.write(old)
- 
-resource = ClockPage()
-factory = Site(resource)
+
+root = Resource()
+root.putChild('', ClockPage())
+root.putChild("style.css", static.File("style.css"))
+factory = Site(root)
 reactor.listenTCP(8888, factory)
 reactor.run() 
