@@ -4,6 +4,11 @@ import time
 with open("alarms.txt") as f:
 	alarmlist = f.readlines()
 
+alarmlist = sorted(alarmlist)
+
+with open("alarms.txt", "w") as f:
+	for alarms in alarmlist:
+		f.write(alarms)
 
 while 1:
 	time.ctime()
@@ -17,7 +22,7 @@ while 1:
 			pygame.mixer.music.play()
 			while pygame.mixer.music.get_busy() == True:
 				continue
-
+			
 
 
 	time.sleep(60)
