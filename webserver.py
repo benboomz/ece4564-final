@@ -67,7 +67,19 @@ class AlarmPage(Resource):
         with open ("alarms.html", "r+") as myfile:
             data=myfile.read()
 
-        return data
+        with open("alarms.txt", "r+") as alarmfile:
+            alarmlist = alarmfile.readlines()
+            html = ""
+        for alarms in alarmlist:
+            html += '''<div class="row">''' + alarms + "</div"
+            html += "<br>"
+
+
+        new = data.replace("sleepcycles", str(html))
+        request.write(new)
+        self.presence.append(request)
+        request.finish()
+        return server.NOT_DONE_YET
 
 
 root = Resource()
