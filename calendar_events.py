@@ -51,6 +51,36 @@ def getEvents(pageToken=None):
         ).execute()
     return events
 
+def parsestring(stringtoparse):
+    if "dateTime" in stringtoparse:
+        trimmed = stringtoparse[16:].replace('T', ' ')
+        indexofT = trimmed.find('T')
+        parselist = trimmed.split('-')
+
+        month = parselist[1]
+        datelist = parselist[2].split(' ')
+        date = datelist[0]
+        timetemp = datelist[1]
+        year = parselist[0]
+
+        timelist = timetemp.split(":")
+        hour = timelist[0]
+        minute = timelist[1]
+
+        if int(hour) > 12:
+            newhour = str(int(hour) - 12)
+            ampm = "PM"
+        else:
+            newhour = hour
+            ampm = "AM"
+
+
+        newtime = newhour + ":" + minute + " " + ampm
+        parseddate = month + "/" + date + "/" + year + " " + newtime
+        return parseddate
+    else:
+        return ""
+
 # def calendar_events():
 #     print "Events: "
 #     events = getEvents()
@@ -68,10 +98,13 @@ def getEvents(pageToken=None):
 #     calendar_events()
 
 events = getEvents()
+listofevents = ""
 while True:
+
     for event in events['items']:
         pprint.pprint(event['summary'])
         pprint.pprint(event['start'])
+        listofevents = listofevents + str(event['start']) + '\n'
         print ''
     page_token = events.get('nextPageToken')
     if page_token:
@@ -79,3 +112,17 @@ while True:
         print events
     else:
         break
+
+listofeventslist = listofevents.split("\n")
+neweventlist = ""
+for times in listofeventslist:
+    if parsestring(times) != "":
+        neweventlist = neweventlist + parsestring(times) + "\n"
+
+with open("alarms.txt") as f:
+    alarmlist = f.readlines()
+
+with open("alarms.txt", "w") as f:
+    f.write(neweventlist)
+    for alarms in alarmlist:
+        f.write(alarms)
