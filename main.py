@@ -7,7 +7,7 @@ with open("alarms.txt") as f:
 
 while 1:
 	time.ctime()
-	currenttime = time.strftime('%m/%d/%y%l:%M %p') #11/30/14 5:34 PM
+	currenttime = time.strftime('%m/%d/%Y%l:%M %p') #11/30/14 5:34 PM
 	print currenttime
 
 	for alarms in alarmlist:
@@ -18,4 +18,8 @@ while 1:
 			while pygame.mixer.music.get_busy() == True:
 				continue
 
+
+
 	time.sleep(60)
+
+
