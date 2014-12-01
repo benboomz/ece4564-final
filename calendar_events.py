@@ -125,7 +125,20 @@ with open("alarms.txt") as f:
 with open("alarms.txt", "w") as f:
     f.write(neweventlist)
     for alarms in alarmlist:
-	if alarms in neweventlist:
-		pass
-	else:
-        	f.write(alarms)
+	   if alarms in neweventlist:
+            pass
+	   else:
+            f.write(alarms)
+
+#next few lines of codes sorts the alarm
+with open("alarms.txt") as f:
+    alarmlist = f.readlines()
+
+alarmlist = sorted(alarmlist)
+
+with open("alarms.txt", "w") as f:
+    for alarms in alarmlist:
+        f.write(alarms)
+
+
+
