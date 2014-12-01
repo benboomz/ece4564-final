@@ -1,127 +1,56 @@
-body {
-    background-color: #000;
-}
-
-a {
-    color: #c0c0c0;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #00ddff;
-}
-
-#section {
-    padding-top:30px;
-    padding-left:100px;
-    width:1000px;
-    position:relative;
-    margin-left: 200px;
-    overflow:auto;
-    overflow-y:hidden; 
-    color: #c0c0c0;
-    
-    -moz-column-count: 2;
-    -moz-column-gap: 15px;
-    -webkit-column-count: 2;
-    -webkit-column-gap: 15px;
-}
-
-#nav {
-    height: 100%;
-    width:60px;
-    position:fixed;
-    color: #000;
-    margin-left: 50px;
-    -webkit-transition: all 0.5s ease-out; 
-    -moz-transition: all 0.5s ease-out; 
-    -o-transition: all 0.5s ease-out;
-}
-
-#blackbox1 {
-    height: 120px;
-    width:85px;
-    left:0px;
-    margin-top:70px;
-    margin-left:35px;
-    background-color: #000;
-    position:fixed;
-    color: #000;
-    -webkit-transition: all 0.5s ease-out; 
-    -moz-transition: all 0.5s ease-out; 
-    -o-transition: all 0.5s ease-out;
-}
-
-#blackbox2 {
-    height: 120px;
-    width:85px;
-    left:0px;
-    margin-top:40px;
-    margin-left:35px;
-    background-color: #000;
-    position:fixed;
-    color: #000;
-    -webkit-transition: all 0.5s ease-out; 
-    -moz-transition: all 0.5s ease-out; 
-    -o-transition: all 0.5s ease-out;
-}
-
-#sidebar {
-    height: 10%;
-    width:20px;
-    left:0px;
-    background-color: #c0c0c0;
-    position:fixed;
-    color: #000;
-    -webkit-transition: all 0.5s ease-out; 
-    -moz-transition: all 0.5s ease-out; 
-    -o-transition: all 0.5s ease-out;
-}
-
-#sidebar:hover {
-    height: 260px;
-    width:160px;
-    left:0px;
-    background-color: #c0c0c0;
-    position:fixed;
-    color: #000;
-    border: solid #fff 1px;
-    -webkit-transition: all 0.5s ease-out; 
-    -moz-transition: all 0.5s ease-out; 
-    -o-transition: all 0.5s ease-out;
-}
-
-#sidebartext {
-    height:220px;
-    width:110px;
-    margin:20px;
-    padding-left:5px;
-    padding-right:5px;
+.container {
     text-align: center;
-    border: solid #000 1px;
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-    font-size:10px;
 }
 
-#posts {
-    width:400px;
-    height:auto;
-    padding-bottom: 30px;
-    color:#c0c0c0;
+.navbar {
+    border-radius: 0px;
 }
 
-#posts img {
-    width:400px;
-    height:auto;
+.date {
+    padding-top: 36px;
 }
 
-#posts img:hover {
-    width:400px;
-    background-image:url('http://coloreminder.com/color/00ddff.png');
-    height:auto;
+.col-md-1 {
+    padding: 10px;
 }
 
-#textposts {
-    font-size:10px;
-    font-family:; "Palatino Linotype", "Book Antiqua", Palatino, serif;
+.circle {
+    border-radius: 60%;
+    width: 100%;
+    position: relative;
+}
+
+.circle-border {
+    border: 2px solid black;
+}
+
+.circle-solid {
+    background-color: whitesmoke;
+}
+
+.circle:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.circle-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+}
+
+.hour-text {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1em;
+    line-height: 1em;
+    font-size: 1em;
 }

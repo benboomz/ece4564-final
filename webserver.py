@@ -120,31 +120,54 @@ from twisted.internet import reactor, task
 from twisted.web.server import Site
 from twisted.web import server, static
 from twisted.web.resource import Resource
+import datetime
 import time
+import json
  
 class ClockPage(Resource):
     isLeaf = True
     def __init__(self):
         self.presence=[]
-        #loopingCall = task.LoopingCall(self.__print_time)
-        #loopingCall.start(1, False)
         Resource.__init__(self)
 
     def render_GET(self, request):
         with open ("home.html", "r+") as myfile:
             data=myfile.read()
-        #old = data.replace("sleepcycles", str(time.ctime()))
-        request.write(data)
+        
+        with open("sleephistory.json", "r+") as historyfile:
+            sleep_history = json.load(historyfile)
+            html = ""
+            
+            for day in sorted(sleep_history.keys()):
+                html += '''<div class="row"><div class="col-md-2 date">''' + day + "</div>"
+
+                for time in sorted(sleep_history[day].keys()):
+
+                    html += '''<div class="col-md-1">
+                                <div class="circle circle-border"'''
+
+                    status = sleep_history[day][time]
+                    if status == "awake":
+                        html += '''style="border: 2px solid #FF0000;">'''
+                    elif status == "light sleep":
+                        html += '''style="border: 2px solid #FFFF00;">'''
+                    elif status == "rem sleep":
+                        html += '''style="border: 2px solid #31B404;">'''
+
+                    html += '''<div class="circle-inner"><div class="hour-text">''' + time
+                    html += '''             </div>
+                                        </div>
+                                    </div>
+                                </div>'''
+                html += "</div>"
+
+
+        new = data.replace("sleepcycles", str(html))
+        request.write(new)
         self.presence.append(request)
         request.finish()
         return server.NOT_DONE_YET
-     
-    def __print_time(self):
-        for p in self.presence:
-            with open ("home.html", "r+") as myfile:
-                data=myfile.read()
-            old = data.replace("sleepcycles", str(time.ctime()))
-            p.write(old)
+
 
 root = Resource()
 root.putChild('', ClockPage())

@@ -1,69 +1,44 @@
 <!DOCTYPE html>
-<html xmlns:t="http://twistedmatrix.com/ns/twisted.web.template/0.1">
-
+<html lang="en">
 <head>
-    <title>TeamDanier</title>
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Smart Alarm Clock - Team Sentry</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body onload="showTime()">
+    <nav role="navigation" class="navbar navbar-inverse">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li class="navbar-brand" href="#">Team Sentry</a>
+                <li><a href="#">Manage Alarms</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Smart Alarm Clock</h1>
+            <h4 id="time"></h4>
+        </div>
+
+        <div id="sleepcyclehistory"> 
+            sleepcycles
+        </div>
+
+
+    </div>
+
     <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-
-
-<div id="sidebar">
-    <!--
-    <div id="blackbox1"></div> -->
-    <div id="sidebartext">
-    <p></p>
-    <p>Danier May</p>
-    <p>Virginia Tech '14</p>
-    
-    <p> 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis faucibus odio, ut vulputate ante gravida ut. Phasellus vitae magna cursus, imperdiet nulla sit amet, dignissim velit.
-    </p>
-    
-   
-    </div>
-    <!--
-     <div id="blackbox2"></div>
-     -->
-</div>
-
-<div id="nav">
-<!-- 
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
--->
-<a href="https://www.facebook.com/dmay8"  style="font-size: 20px">danier</a>
-<br>
-<a href="http://google.com"  style="font-size: 12px">gs</a> 
-<p></p>
-<a href="https://facebook.com/"  style="font-size: 12px">f</a> 
-<p></p>
-<a href="http://youtube.com"  style="font-size: 12px">y</a> 
-<p></p>
-<a href="http://weather.com"  style="font-size: 12px">w</a> 
-<p></p>
-<a href="http://scholar.vt.edu"  style="font-size: 12px">s</a> 
-</div>
-
-<div id="section"> 
-    sleepcycles
-    <div id="time">
-    </div>
-</div>
-
-</body>
-
-<script>
+    <script src="./bootstrap/js/bootstrap.js"></script>
+    <script>
     function showTime()
     {
         var dateTime = new Date()
@@ -71,8 +46,6 @@
         document.getElementById("time").innerHTML = string
         var t = setTimeout(function(){showTime(), 5000})
     }
-</script>
-
-</html> 
-
-
+    </script>
+</body>
+</html>
