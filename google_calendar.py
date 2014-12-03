@@ -6,6 +6,8 @@ from oauth2client.file import Storage
 from oauth2client.client import OAuth2WebServerFlow
 from oauth2client.tools import run
 
+import argparse
+
 FLAGS = gflags.FLAGS
 
 # Set up a Flow object to be used if we need to authenticate. This
@@ -26,10 +28,16 @@ FLOW = OAuth2WebServerFlow(
 # If the Credentials don't exist or are invalid, run through the native client
 # flow. The Storage object will ensure that if successful the good
 # Credentials will get written back to a file.
-storage = Storage('calendar.dat')
-credentials = storage.get()
-if credentials is None or credentials.invalid == True:
-  credentials = run(FLOW, storage)
+
+# storage = Storage('calendar.dat')
+# credentials = storage.get()
+# if credentials is None or credentials.invalid == True:
+  # credentials = run(FLOW, storage)
+  
+parser = argparse.ArgumentParser(parents=[tools.argparser])
+flags = parser.parse_args()
+
+credentials = tools.run_flow(flow, storage, flags)
 
 # Create an httplib2.Http object to handle our HTTP requests and authorize it
 # with our good Credentials.

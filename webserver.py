@@ -6,6 +6,7 @@ from twisted.web.resource import Resource
 import datetime
 import time
 import json
+import cgi
  
 class ClockPage(Resource):
     isLeaf = 1
@@ -82,8 +83,10 @@ class AlarmPage(Resource):
         return server.NOT_DONE_YET
 
 class LoginPage(Resource):
-    isLeaf = 0
 
+    isLeaf = 0
+    allowedMethods = ('GET', 'POST')
+	
     def __init__(self):
         self.presence=[]
         Resource.__init__(self)
@@ -95,14 +98,17 @@ class LoginPage(Resource):
         request.write(data)
         self.presence.append(request)
         request.finish()
-        return server.NOT_DONE_YET
+        return server.NOT_DONE_YET	
+
+    def render_POST(self, request):
+		return '<html><body>You submitted: %s </body></html>' % (cgi.escape(request.args["username"][0]),)
 
 root = Resource()
 root.putChild('', LoginPage())
 root.putChild("home.html", ClockPage())
+root.putChild("alarms.html", AlarmPage())
 root.putChild("style.css", static.File("style.css"))
 root.putChild("bootstrap", static.File("./bootstrap"))
-root.putChild("alarms.html", AlarmPage())
 factory = Site(root)
 reactor.listenTCP(8888, factory)
 reactor.run() 
