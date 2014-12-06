@@ -21,21 +21,22 @@
 
     <div class="container">
         <div class="jumbotron" id="login">
-            <h2>Log In to Google</h2>
+            <h2>Log In With Your Google Account</h2>
+			<form method="POST" target="_blank">
+				<p class="submit">
+					<input type="submit" name="signin" value="Click to Log in to Google">
+				</p>
+			</form>
+			<h2>Once you have Logged In, Enter Your Verification Code</h2>
 			<form method="POST">
 				<p>
-					<input type="text" name="username" placeholder="Enter username">
-				</p>
-				<p>
-					<input type="password" name="password" placeholder="Enter password">
+					<input type="text" name="code" placeholder="Verification code">
 				</p>
 				<p class="submit">
-					<input type="submit" name="commit" value="Login">
+					<input type="submit" name="home" value="Go to Home Page">
 				</p>
 			</form>
         </div>
-
-
     </div>
 
     <script src="http://code.jquery.com/jquery.js"></script>

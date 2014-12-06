@@ -6,7 +6,6 @@ from oauth2client.file import Storage
 from oauth2client.client import OAuth2WebServerFlow
 from oauth2client.tools import run
 
-import argparse
 
 FLAGS = gflags.FLAGS
 
@@ -17,13 +16,13 @@ FLAGS = gflags.FLAGS
 # applications
 # The client_id and client_secret can be found in Google Developers Console
 FLOW = OAuth2WebServerFlow(
-    client_id='286518689990-ag723aq5sfftgm3n78imd7pshqk32k0f.apps.googleusercontent.com',
-    client_secret='fI9w_qEyW8WeN8zm672Dk4wy',
-    scope='https://www.googleapis.com/auth/calendar',
-    user_agent='SMART_ALARM_CLOCK/VER_1.0')
+	client_id='286518689990-houk6epk8mmpottb3o5ns6c7jfv4iqpq.apps.googleusercontent.com',
+	client_secret='MMqETfGzjBk5bPWl7_74E8sK',
+	scope='https://www.googleapis.com/auth/calendar',
+	user_agent='SMART_ALARM_CLOCK/VER_1.0')
 
 # To disable the local server feature, uncomment the following line:
-# FLAGS.auth_local_webserver = False
+FLAGS.auth_local_webserver = False
 
 # If the Credentials don't exist or are invalid, run through the native client
 # flow. The Storage object will ensure that if successful the good
@@ -32,20 +31,28 @@ FLOW = OAuth2WebServerFlow(
 # storage = Storage('calendar.dat')
 # credentials = storage.get()
 # if credentials is None or credentials.invalid == True:
-  # credentials = run(FLOW, storage)
-  
-parser = argparse.ArgumentParser(parents=[tools.argparser])
-flags = parser.parse_args()
+# 	credentials = run(FLOW, storage)
 
-credentials = tools.run_flow(flow, storage, flags)
 
-# Create an httplib2.Http object to handle our HTTP requests and authorize it
-# with our good Credentials.
-http = httplib2.Http()
-http = credentials.authorize(http)
+def authorize(credentials):
+	# Create an httplib2.Http object to handle our HTTP requests and authorize it
+	# with our good Credentials.
+	http = httplib2.Http()
+	http = credentials.authorize(http)
+	return http
 
-# Build a service object for interacting with the API. Visit
-# the Google Developers Console
-# to get a developerKey for your own application.
-service = build(serviceName='calendar', version='v3', http=http,
-       developerKey='AIzaSyD8_uIwOB3Uo144ZPITdC9TJAwUU8IkTkI')
+def getService():
+
+	storage = Storage('calendar.dat')
+	credentials = storage.get()
+	if credentials is None or credentials.invalid == True:
+		credentials = run(FLOW, storage)
+
+	http = authorize(credentials)
+
+	# Build a service object for interacting with the API. Visit
+	# the Google Developers Console
+	# to get a developerKey for your own application.
+	service = build(serviceName='calendar', version='v3', http=http,
+	       developerKey='AIzaSyD8_uIwOB3Uo144ZPITdC9TJAwUU8IkTkI')
+	return service

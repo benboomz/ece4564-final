@@ -1,12 +1,20 @@
-
 from twisted.internet import reactor, task
 from twisted.web.server import Site
 from twisted.web import server, static
 from twisted.web.resource import Resource
+
+from oauth2client.file import Storage
+from oauth2client.client import OAuth2WebServerFlow
+from oauth2client.tools import run
+
+import gflags
+import google_calendar
+
 import datetime
 import time
 import json
 import cgi
+import os
  
 class ClockPage(Resource):
     isLeaf = 1
@@ -26,7 +34,6 @@ class ClockPage(Resource):
                 html += '''<div class="row"><div class="col-md-2 date">''' + day + "</div>"
 
                 for time in sorted(sleep_history[day].keys()):
-
                     html += '''<div class="col-md-1">
                                 <div class="circle circle-border"'''
 
@@ -83,7 +90,6 @@ class AlarmPage(Resource):
         return server.NOT_DONE_YET
 
 class LoginPage(Resource):
-
     isLeaf = 0
     allowedMethods = ('GET', 'POST')
 	
@@ -92,16 +98,69 @@ class LoginPage(Resource):
         Resource.__init__(self)
 
     def render_GET(self, request):
-        with open ("login.html", "r+") as myfile:
-            data=myfile.read()
+        if not os.path.isfile("calendar.dat"):
+            storage = Storage('calendar.dat')
+            credentials = storage.get()
 
-        request.write(data)
-        self.presence.append(request)
-        request.finish()
-        return server.NOT_DONE_YET	
+            if credentials is None or credentials.invalid == True:
+                with open ("login.html", "r+") as myfile:
+                    data=myfile.read()
 
+                request.write(data)
+                self.presence.append(request)
+                request.finish()
+                return server.NOT_DONE_YET
+        else:
+            request.redirect("/home.html")
+            request.finish()
+            return server.NOT_DONE_YET
+    
     def render_POST(self, request):
-		return '<html><body>You submitted: %s </body></html>' % (cgi.escape(request.args["username"][0]),)
+
+        if "signin" in request.args:
+            authorize_url = FLOW.step1_get_authorize_url()
+            request.redirect(str(authorize_url))
+            request.finish()
+            return server.NOT_DONE_YET
+
+        if "code" in request.args:
+            try: 
+                credentials = FLOW.step2_exchange(cgi.escape(request.args["code"][0]))
+                # storage = Storage('calendar.dat')
+                # credentials = storage.get()
+                # if credentials is None or credentials.invalid == True:
+                #     credentials = run(FLOW, storage)
+
+                storage = Storage('calendar.dat')
+                storage.put(credentials)
+                print "Stored credentials in calendar.dat"
+
+                google_calendar.authorize(credentials)
+            except:
+                print "User already authorized."
+
+            request.redirect("/home.html")
+            request.finish()
+            return server.NOT_DONE_YET
+
+
+FLAGS = gflags.FLAGS
+
+# Set up a Flow object to be used if we need to authenticate. This
+# sample uses OAuth 2.0, and we set up the OAuth2WebServerFlow with
+# the information it needs to authenticate. Note that it is called
+# the Web Server Flow, but it can also handle the flow for native
+# applications
+# The client_id and client_secret can be found in Google Developers Console
+FLOW = OAuth2WebServerFlow(
+    client_id='286518689990-houk6epk8mmpottb3o5ns6c7jfv4iqpq.apps.googleusercontent.com',
+    client_secret='MMqETfGzjBk5bPWl7_74E8sK',
+    scope='https://www.googleapis.com/auth/calendar',
+    user_agent='SMART_ALARM_CLOCK/VER_1.0',
+    redirect_uri='urn:ietf:wg:oauth:2.0:oob')
+
+# To disable the local server feature, uncomment the following line:
+FLAGS.auth_local_webserver = False
 
 root = Resource()
 root.putChild('', LoginPage())

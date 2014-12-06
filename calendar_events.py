@@ -40,7 +40,7 @@ class LocalTimezone(tzinfo):
 
 
 def getEvents(pageToken=None):
-    events = google_calendar.service.events().list(
+    events = google_calendar.getService().events().list(
         calendarId=calendarId,
         singleEvents=True,
         maxResults=1000,
