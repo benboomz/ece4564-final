@@ -39,12 +39,22 @@ while 1:
 	if z > maxz:
 		maxz = z
 
-	if count == 10:
+	if count == 100:
 		count = 1
-		xavg = xsum / 10.0
-		yavg = ysum / 10.0
-		zavg = zsum / 10.0
+		xavg = xsum / 100.0
+		yavg = ysum / 100.0
+		zavg = zsum / 100.0
 		
+		xavg = round(xavg, 2)
+		yavg = round(yavg, 2)
+		zavg = round(zavg, 2)
+		minx = round(minx, 2)
+		miny = round(miny, 2)
+		minz = round(minz, 2)
+		maxx = round(maxx, 2)
+		maxy = round(maxy, 2)
+		maxz = round(maxz, 2)
+
 		print "x = " + str(xavg) + "\tmin: " + str(minx) + "\tmax: " + str(maxx)
 		print "y = " + str(yavg) + "\tmin: " + str(miny) + "\tmax: " + str(maxy)
 		print "z = " + str(zavg) + "\tmin: " + str(minz) + "\tmax: " + str(maxz)
