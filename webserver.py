@@ -143,6 +143,23 @@ class LoginPage(Resource):
             request.finish()
             return server.NOT_DONE_YET
 
+class LogoutPage(Resource):
+    isLeaf = True
+
+    def __init__(self):
+        self.presence=[]
+        Resource.__init__(self)
+
+    def render_GET(self, request):
+        if os.path.isfile("calendar.dat"):
+            os.remove("calendar.dat")
+
+        with open ("logout.html", "r+") as myfile:
+            data=myfile.read()
+            request.write(data)
+            self.presence.append(request)
+            request.finish()
+            return server.NOT_DONE_YET
 
 FLAGS = gflags.FLAGS
 
@@ -166,6 +183,7 @@ root = Resource()
 root.putChild('', LoginPage())
 root.putChild("home.html", ClockPage())
 root.putChild("alarms.html", AlarmPage())
+root.putChild("logout.html", LogoutPage())
 root.putChild("style.css", static.File("style.css"))
 root.putChild("bootstrap", static.File("./bootstrap"))
 factory = Site(root)
