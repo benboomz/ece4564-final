@@ -55,10 +55,11 @@ while 1:
 		maxy = round(maxy, 2)
 		maxz = round(maxz, 2)
 		
+		
 		if str(xavg) == "0.0":
-			print "x = " + str(xavg) + "\t\tmin: " + str(minx) + "\tmax: " + str(maxx)
+			print "x = " + str(xavg) + "\t\tmin: " + str(minx) + "\tmax: " + str(maxx) + "\trange: " + str(maxx-minx)
 		else:
-			print "x = " + str(xavg) + "\tmin: " + str(minx) + "\tmax: " + str(maxx)
+			print "x = " + str(xavg) + "\tmin: " + str(minx) + "\tmax: " + str(maxx) + "\trange: " + str(maxx-minx)
 
 		print "y = " + str(yavg) + "\tmin: " + str(miny) + "\tmax: " + str(maxy)
 		print "z = " + str(zavg) + "\tmin: " + str(minz) + "\tmax: " + str(maxz)
