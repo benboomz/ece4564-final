@@ -24,7 +24,7 @@ while 1:
 	xsum = xsum + x
 	ysum = ysum + y
 	zsum = zsum + z
-	
+		
 	if x < minx:
 		minx = x
 	if y < miny:
@@ -54,12 +54,17 @@ while 1:
 		maxx = round(maxx, 2)
 		maxy = round(maxy, 2)
 		maxz = round(maxz, 2)
+		
+		if str(xavg) == "0.0":
+			print "x = " + str(xavg) + "\t\tmin: " + str(minx) + "\tmax: " + str(maxx)
+		else:
+			print "x = " + str(xavg) + "\tmin: " + str(minx) + "\tmax: " + str(maxx)
 
-		print "x = " + str(xavg) + "\tmin: " + str(minx) + "\tmax: " + str(maxx)
 		print "y = " + str(yavg) + "\tmin: " + str(miny) + "\tmax: " + str(maxy)
 		print "z = " + str(zavg) + "\tmin: " + str(minz) + "\tmax: " + str(maxz)
 		print
 		
 		xsum = ysum = zsum = 0
-
+		minx = miny = minz = 100
+		maxx = maxy = maxz = -100
 	time.sleep(0.1)	
