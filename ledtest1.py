@@ -99,4 +99,4 @@ fill_rectangle(20, 4, 30, 15, 2)
 fill_rectangle(15, 0, 19, 7, 7)
  
 while True:
-refresh()
+	refresh()
