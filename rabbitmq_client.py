@@ -72,7 +72,7 @@ def on_new_msg(channel, delivery_info, msg_properties, msg):
 	#print "on_new_msg"
 	# Parse the JSON message into a dict
 	try:
-		listofalarms = json.loads(chat_msg)
+		listofalarms = json.loads(msg)
 		print listofalarms
 		print 
 
@@ -111,7 +111,7 @@ def main(argv):
 		
 		print "Connected to message broker"
 		channel = message_broker.channel()
-		channel.exchange_declare(exchange="pi_utilization",
+		channel.exchange_declare(exchange="alarms",
 												type="direct")
 			
 		signal_num = signal.SIGINT
@@ -130,7 +130,7 @@ def main(argv):
 		my_queue = channel.queue_declare(exclusive=True)
 		
 		# Bind the queue to the stats exchange
-		channel.queue_bind(exchange="pi_utilization",
+		channel.queue_bind(exchange="alarms",
 									queue=my_queue.method.queue,
 									routing_key=rkey)
 							
