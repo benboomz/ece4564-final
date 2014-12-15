@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 import time
+
  
 delay = 0.000001
  
@@ -129,66 +130,67 @@ def set_pixel(x, y, color):
 ##################################################################
 #first digit
 
-if(hrLeft == 1):
-	fill_rectangle(25, 9, 27, 15, 1) # right top |
-	fill_rectangle(25, 5, 27, 11, 1) # bottom right |
-elif(hrLeft == 2):
-	fill_rectangle(25, 13, 31, 15, 1) # top -
-	fill_rectangle(25, 9, 27, 15, 1) # right top |
-	fill_rectangle(25, 9, 31, 11, 1) # mid -
-	fill_rectangle(29, 5, 31, 11, 1) # bottom left |
-	fill_rectangle(25, 5, 31, 7, 1) # bottom -
-elif(hrLeft ==3):
-	fill_rectangle(25, 13, 31, 15, 1) # top -
-	fill_rectangle(25, 9, 27, 15, 1) # right top |
-	fill_rectangle(25, 9, 31, 11, 1) # mid -
-	fill_rectangle(25, 5, 27, 11, 1) # bottom right |
-	fill_rectangle(25, 5, 31, 7, 1) # bottom -
-elif(hrLeft ==4):
-	fill_rectangle(25, 9, 27, 15, 1) # right top |
-	fill_rectangle(25, 9, 31, 11, 1) # mid -
-	fill_rectangle(29, 9, 31, 15, 1) # left top |
-	fill_rectangle(25, 5, 27, 11, 1) # bottom right |
-elif(hrLeft ==5):
-	fill_rectangle(25, 13, 31, 15, 1) # top -
-	fill_rectangle(29, 9, 31, 15, 1) # left top |
-	fill_rectangle(25, 9, 31, 11, 1) # mid -	
-	fill_rectangle(25, 5, 27, 11, 1) # bottom right |
-	fill_rectangle(25, 5, 31, 7, 1) # bottom -
-elif(hrLeft ==6):
-	fill_rectangle(25, 13, 31, 15, 1) # top -
-	fill_rectangle(29, 9, 31, 15, 1) # left top |
-	fill_rectangle(25, 9, 31, 11, 1) # mid -	
-	fill_rectangle(25, 5, 27, 11, 1) # bottom right |
-	fill_rectangle(29, 5, 31, 11, 1) # bottom left |
-	fill_rectangle(25, 5, 31, 7, 1) # bottom -
-elif(hrLeft == 7):
-	fill_rectangle(25, 13, 31, 15, 1) # top -
-	fill_rectangle(25, 9, 27, 15, 1) # right top |
-	fill_rectangle(25, 5, 27, 11, 1) # bottom right |
-elif(hrLeft==8):
-	fill_rectangle(25, 13, 31, 15, 1) # top -
-	fill_rectangle(25, 9, 27, 15, 1) # right top |
-	fill_rectangle(25, 9, 31, 11, 1) # mid -
-	fill_rectangle(29, 9, 31, 15, 1) # left top |
-	fill_rectangle(25, 5, 27, 11, 1) # bottom right |
-	fill_rectangle(29, 5, 31, 11, 1) # bottom left |
-	fill_rectangle(25, 5, 31, 7, 1) # bottom -
-elif(hrLeft==9):
-	fill_rectangle(25, 13, 31, 15, 1) # top -
-	fill_rectangle(25, 9, 27, 15, 1) # right top |
-	fill_rectangle(25, 9, 31, 11, 1) # mid -
-	fill_rectangle(29, 9, 31, 15, 1) # left top |
-	fill_rectangle(25, 5, 27, 11, 1) # bottom right |
-	fill_rectangle(25, 5, 31, 7, 1) # bottom -
-elif(hrLeft==0):
-	fill_rectangle(25, 13, 31, 15, 1) # top -
-	fill_rectangle(25, 9, 27, 15, 1) # right top |
-	fill_rectangle(29, 9, 31, 15, 1) # left top |
-	fill_rectangle(25, 5, 27, 11, 1) # bottom right |
-	fill_rectangle(29, 5, 31, 11, 1) # bottom left |
-	fill_rectangle(25, 5, 31, 7, 1) # bottom -
-	
+while True: 
+	if(hrLeft == 1):
+		fill_rectangle(25, 9, 27, 15, 2) # right top |
+		fill_rectangle(25, 5, 27, 11, 2) # bottom right |
+	elif(hrLeft == 2):
+		fill_rectangle(25, 13, 31, 15, 2) # top -
+		fill_rectangle(25, 9, 27, 15, 2) # right top |
+		fill_rectangle(25, 9, 31, 11, 2) # mid -
+		fill_rectangle(29, 5, 31, 11, 2) # bottom left |
+		fill_rectangle(25, 5, 31, 7, 2) # bottom -
+	elif(hrLeft ==3):
+		fill_rectangle(25, 13, 31, 15, 2) # top -
+		fill_rectangle(25, 9, 27, 15, 2) # right top |
+		fill_rectangle(25, 9, 31, 11, 2) # mid -
+		fill_rectangle(25, 5, 27, 11, 2) # bottom right |
+		fill_rectangle(25, 5, 31, 7, 2) # bottom -
+	elif(hrLeft ==4):
+		fill_rectangle(25, 9, 27, 15, 2) # right top |
+		fill_rectangle(25, 9, 31, 11, 2) # mid -
+		fill_rectangle(29, 9, 31, 15, 2) # left top |
+		fill_rectangle(25, 5, 27, 11, 2) # bottom right |
+	elif(hrLeft ==5):
+		fill_rectangle(25, 13, 31, 15, 2) # top -
+		fill_rectangle(29, 9, 31, 15, 2) # left top |
+		fill_rectangle(25, 9, 31, 11, 2) # mid -	
+		fill_rectangle(25, 5, 27, 11, 2) # bottom right |
+		fill_rectangle(25, 5, 31, 7, 2) # bottom -
+	elif(hrLeft ==6):
+		fill_rectangle(25, 13, 31, 15, 2) # top -
+		fill_rectangle(29, 9, 31, 15, 2) # left top |
+		fill_rectangle(25, 9, 31, 11, 2) # mid -	
+		fill_rectangle(25, 5, 27, 11, 2) # bottom right |
+		fill_rectangle(29, 5, 31, 11, 2) # bottom left |
+		fill_rectangle(25, 5, 31, 7, 2) # bottom -
+	elif(hrLeft == 7):
+		fill_rectangle(25, 13, 31, 15, 2) # top -
+		fill_rectangle(25, 9, 27, 15, 2) # right top |
+		fill_rectangle(25, 5, 27, 11, 2) # bottom right |
+	elif(hrLeft==8):
+		fill_rectangle(25, 13, 31, 15, 2) # top -	
+		fill_rectangle(25, 9, 27, 15, 2) # right top |
+		fill_rectangle(25, 9, 31, 11, 2) # mid -
+		fill_rectangle(29, 9, 31, 15, 2) # left top |
+		fill_rectangle(25, 5, 27, 11, 2) # bottom right |
+		fill_rectangle(29, 5, 31, 11, 2) # bottom left |
+		fill_rectangle(25, 5, 31, 7, 1) # bottom -
+	elif(hrLeft==9):
+		fill_rectangle(25, 13, 31, 15, 2) # top -
+		fill_rectangle(25, 9, 27, 15, 2) # right top |
+		fill_rectangle(25, 9, 31, 11, 2) # mid -
+		fill_rectangle(29, 9, 31, 15, 2) # left top |
+		fill_rectangle(25, 5, 27, 11, 2) # bottom right |
+		fill_rectangle(25, 5, 31, 7, 2) # bottom -
+	elif(hrLeft==0):
+		fill_rectangle(25, 13, 31, 15, 2) # top -
+		fill_rectangle(25, 9, 27, 15, 2) # right top |
+		fill_rectangle(29, 9, 31, 15, 2) # left top |
+		fill_rectangle(25, 5, 27, 11, 2) # bottom right |
+		fill_rectangle(29, 5, 31, 11, 2) # bottom left |
+		fill_rectangle(25, 5, 31, 7, 2) # bottom -
+		
 #fill_rectangle(27, 5, 29, 15, 1) #1
 #fill_rectangle(25, 13, 31, 15, 1) # top -
 #fill_rectangle(25, 9, 27, 15, 1) # right top |
@@ -200,65 +202,65 @@ elif(hrLeft==0):
 
 ##################################################################
 
-if(hrRight == 1):
-	fill_rectangle(18, 9, 20, 15, 2) # right top |
-	fill_rectangle(18, 5, 20, 11, 2) # bottom  right |
-elif(hrRight == 2):
-	fill_rectangle(18, 13, 24, 15, 2) # top -
-	fill_rectangle(18, 9, 20, 15, 2) # right top |
-	fill_rectangle(18, 9, 24, 11, 2) # mid -
-	fill_rectangle(22, 5, 24, 11, 2) # bottom left |
-	fill_rectangle(18, 5, 24, 7, 2) # bottom -
-elif(hrRight == 3):
-	fill_rectangle(18, 13, 24, 15, 2) # top -
-	fill_rectangle(18, 9, 20, 15, 2) # right top |
-	fill_rectangle(18, 9, 24, 11, 2) # mid -
-	fill_rectangle(18, 5, 20, 11, 2) # bottom  right |
-	fill_rectangle(18, 5, 24, 7, 2) # bottom -
-elif(hrRight == 4):
-	fill_rectangle(18, 9, 20, 15, 2) # right top |
-	fill_rectangle(18, 9, 24, 11, 2) # mid -
-	fill_rectangle(22, 9, 24, 15, 2) # top left |
-	fill_rectangle(18, 5, 20, 11, 2) # bottom  right |
-elif(hrRight == 5):
-	fill_rectangle(18, 13, 24, 15, 2) # top -
-	fill_rectangle(18, 9, 24, 11, 2) # mid -
-	fill_rectangle(22, 9, 24, 15, 2) # top left |
-	fill_rectangle(18, 5, 20, 11, 2) # bottom  right |
-	fill_rectangle(18, 5, 24, 7, 2) # bottom -
-elif(hrRight == 6):
-	fill_rectangle(18, 13, 24, 15, 2) # top -
-	fill_rectangle(18, 9, 24, 11, 2) # mid -
-	fill_rectangle(22, 9, 24, 15, 2) # top left |
-	fill_rectangle(18, 5, 20, 11, 2) # bottom  right |
-	fill_rectangle(22, 5, 24, 11, 2) # bottom left |
-	fill_rectangle(18, 5, 24, 7, 2) # bottom -
-elif(hrRight == 7):
-	fill_rectangle(18, 13, 24, 15, 2) # top -
-	fill_rectangle(18, 9, 20, 15, 2) # right top |
-	fill_rectangle(18, 5, 20, 11, 2) # bottom  right |
-elif(hrRight == 8):
-	fill_rectangle(18, 13, 24, 15, 2) # top -
-	fill_rectangle(18, 9, 20, 15, 2) # right top |
-	fill_rectangle(18, 9, 24, 11, 2) # mid -
-	fill_rectangle(22, 9, 24, 15, 2) # top left |
-	fill_rectangle(18, 5, 20, 11, 2) # bottom  right |
-	fill_rectangle(22, 5, 24, 11, 2) # bottom left |
-	fill_rectangle(18, 5, 24, 7, 2) # bottom -
-elif(hrRight == 9):
-	fill_rectangle(18, 13, 24, 15, 2) # top -
-	fill_rectangle(18, 9, 20, 15, 2) # right top |
-	fill_rectangle(18, 9, 24, 11, 2) # mid -
-	fill_rectangle(22, 9, 24, 15, 2) # top left |
-	fill_rectangle(18, 5, 20, 11, 2) # bottom  right |
-	fill_rectangle(18, 5, 24, 7, 2) # bottom -
-elif(hrRight == 0):
-	fill_rectangle(18, 13, 24, 15, 2) # top -
-	fill_rectangle(18, 9, 20, 15, 2) # right top |
-	fill_rectangle(22, 9, 24, 15, 2) # top left |
-	fill_rectangle(18, 5, 20, 11, 2) # bottom  right |
-	fill_rectangle(22, 5, 24, 11, 2) # bottom left |
-	fill_rectangle(18, 5, 24, 7, 2) # bottom -
+	if(hrRight == 1):
+		fill_rectangle(18, 9, 20, 15, 2) # right top |
+		fill_rectangle(18, 5, 20, 11, 2) # bottom  right |
+	elif(hrRight == 2):
+		fill_rectangle(18, 13, 24, 15, 2) # top -
+		fill_rectangle(18, 9, 20, 15, 2) # right top |
+		fill_rectangle(18, 9, 24, 11, 2) # mid -
+		fill_rectangle(22, 5, 24, 11, 2) # bottom left |
+		fill_rectangle(18, 5, 24, 7, 2) # bottom -
+	elif(hrRight == 3):
+		fill_rectangle(18, 13, 24, 15, 2) # top -
+		fill_rectangle(18, 9, 20, 15, 2) # right top |
+		fill_rectangle(18, 9, 24, 11, 2) # mid -
+		fill_rectangle(18, 5, 20, 11, 2) # bottom  right |
+		fill_rectangle(18, 5, 24, 7, 2) # bottom -
+	elif(hrRight == 4):
+		fill_rectangle(18, 9, 20, 15, 2) # right top |
+		fill_rectangle(18, 9, 24, 11, 2) # mid -
+		fill_rectangle(22, 9, 24, 15, 2) # top left |
+		fill_rectangle(18, 5, 20, 11, 2) # bottom  right |
+	elif(hrRight == 5):
+		fill_rectangle(18, 13, 24, 15, 2) # top -
+		fill_rectangle(18, 9, 24, 11, 2) # mid -
+		fill_rectangle(22, 9, 24, 15, 2) # top left |	
+		fill_rectangle(18, 5, 20, 11, 2) # bottom  right |
+		fill_rectangle(18, 5, 24, 7, 2) # bottom -
+	elif(hrRight == 6):
+		fill_rectangle(18, 13, 24, 15, 2) # top -
+		fill_rectangle(18, 9, 24, 11, 2) # mid -
+		fill_rectangle(22, 9, 24, 15, 2) # top left |
+		fill_rectangle(18, 5, 20, 11, 2) # bottom  right |
+		fill_rectangle(22, 5, 24, 11, 2) # bottom left |
+		fill_rectangle(18, 5, 24, 7, 2) # bottom -
+	elif(hrRight == 7):
+		fill_rectangle(18, 13, 24, 15, 2) # top -
+		fill_rectangle(18, 9, 20, 15, 2) # right top |
+		fill_rectangle(18, 5, 20, 11, 2) # bottom  right |
+	elif(hrRight == 8):
+		fill_rectangle(18, 13, 24, 15, 2) # top -
+		fill_rectangle(18, 9, 20, 15, 2) # right top |
+		fill_rectangle(18, 9, 24, 11, 2) # mid -
+		fill_rectangle(22, 9, 24, 15, 2) # top left |
+		fill_rectangle(18, 5, 20, 11, 2) # bottom  right |
+		fill_rectangle(22, 5, 24, 11, 2) # bottom left |
+		fill_rectangle(18, 5, 24, 7, 2) # bottom -
+	elif(hrRight == 9):
+		fill_rectangle(18, 13, 24, 15, 2) # top -
+		fill_rectangle(18, 9, 20, 15, 2) # right top |
+		fill_rectangle(18, 9, 24, 11, 2) # mid -
+		fill_rectangle(22, 9, 24, 15, 2) # top left |
+		fill_rectangle(18, 5, 20, 11, 2) # bottom  right |
+		fill_rectangle(18, 5, 24, 7, 2) # bottom -
+	elif(hrRight == 0):
+		fill_rectangle(18, 13, 24, 15, 2) # top -
+		fill_rectangle(18, 9, 20, 15, 2) # right top |
+		fill_rectangle(22, 9, 24, 15, 2) # top left |
+		fill_rectangle(18, 5, 20, 11, 2) # bottom  right |
+		fill_rectangle(22, 5, 24, 11, 2) # bottom left |
+		fill_rectangle(18, 5, 24, 7, 2) # bottom -
 	
 #2             x    y   x   y
 #fill_rectangle(18, 13, 24, 15, 2) # top -
@@ -270,69 +272,69 @@ elif(hrRight == 0):
 #fill_rectangle(18, 5, 24, 7, 2) # bottom -
 
 #dots
-fill_rectangle(15, 11, 17, 13, 3)
-fill_rectangle(15, 7, 17, 9, 3)
+	fill_rectangle(15, 11, 17, 13, 3)
+	fill_rectangle(15, 7, 17, 9, 3)
 
 ###################################################################
-if(minLeft == 1):
-	fill_rectangle(8, 9, 10, 15, 3)  # right top |
-	fill_rectangle(8, 5, 10, 11, 3) # bottom right |
-elif(minLeft == 2):
-	fill_rectangle(8, 13, 14, 15, 3) # top -
-	fill_rectangle(8, 9, 10, 15, 3)  # right top |
-	fill_rectangle(8, 9, 14, 11, 3) # mid -
-	fill_rectangle(12, 5, 14, 11, 3) # bottom left |
-	fill_rectangle(8, 5, 14, 7, 3) #bottom -
-elif(minLeft == 3):
-	fill_rectangle(8, 13, 14, 15, 3) # top -
-	fill_rectangle(8, 9, 10, 15, 3)  # right top |
-	fill_rectangle(8, 9, 14, 11, 3) # mid -
-	fill_rectangle(8, 5, 10, 11, 3) # bottom right |
-	fill_rectangle(8, 5, 14, 7, 3) #bottom -
-elif(minLeft == 4):
-	fill_rectangle(8, 9, 10, 15, 3)  # right top |
-	fill_rectangle(8, 9, 14, 11, 3) # mid -
-	fill_rectangle(12, 9, 14, 15, 3) # left top |
-	fill_rectangle(8, 5, 10, 11, 3) # bottom right |
-elif(minLeft == 5):
-	fill_rectangle(8, 13, 14, 15, 3) # top -
-	fill_rectangle(8, 9, 14, 11, 3) # mid -
-	fill_rectangle(12, 9, 14, 15, 3) # left top |
-	fill_rectangle(8, 5, 10, 11, 3) # bottom right |
-	fill_rectangle(8, 5, 14, 7, 3) #bottom -
-elif(minLeft == 6):
-	fill_rectangle(8, 13, 14, 15, 3) # top -
-	fill_rectangle(8, 9, 14, 11, 3) # mid -
-	fill_rectangle(12, 9, 14, 15, 3) # left top |
-	fill_rectangle(8, 5, 10, 11, 3) # bottom right |
-	fill_rectangle(12, 5, 14, 11, 3) # bottom left |
-	fill_rectangle(8, 5, 14, 7, 3) #bottom -
-elif(minLeft == 7):
-	fill_rectangle(8, 13, 14, 15, 3) # top -
-	fill_rectangle(8, 9, 10, 15, 3)  # right top |
-	fill_rectangle(8, 5, 10, 11, 3) # bottom right |
-elif(minLeft == 8):
-	fill_rectangle(8, 13, 14, 15, 3) # top -
-	fill_rectangle(8, 9, 10, 15, 3)  # right top |
-	fill_rectangle(8, 9, 14, 11, 3) # mid -
-	fill_rectangle(12, 9, 14, 15, 3) # left top |
-	fill_rectangle(8, 5, 10, 11, 3) # bottom right |
-	fill_rectangle(12, 5, 14, 11, 3) # bottom left |
-	fill_rectangle(8, 5, 14, 7, 3) #bottom -
-elif(minLeft == 9):
-	fill_rectangle(8, 13, 14, 15, 3) # top -
-	fill_rectangle(8, 9, 10, 15, 3)  # right top |
-	fill_rectangle(8, 9, 14, 11, 3) # mid -
-	fill_rectangle(12, 9, 14, 15, 3) # left top |
-	fill_rectangle(8, 5, 10, 11, 3) # bottom right |
-	fill_rectangle(8, 5, 14, 7, 3) #bottom -
-elif(minLeft == 0):
-	fill_rectangle(8, 13, 14, 15, 3) # top -
-	fill_rectangle(8, 9, 10, 15, 3)  # right top |
-	fill_rectangle(12, 9, 14, 15, 3) # left top |
-	fill_rectangle(8, 5, 10, 11, 3) # bottom right |
-	fill_rectangle(12, 5, 14, 11, 3) # bottom left |
-	fill_rectangle(8, 5, 14, 7, 3) #bottom -
+	if(minLeft == 1):
+		fill_rectangle(8, 9, 10, 15, 3)  # right top |
+		fill_rectangle(8, 5, 10, 11, 3) # bottom right |
+	elif(minLeft == 2):
+		fill_rectangle(8, 13, 14, 15, 3) # top -
+		fill_rectangle(8, 9, 10, 15, 3)  # right top |
+		fill_rectangle(8, 9, 14, 11, 3) # mid -	
+		fill_rectangle(12, 5, 14, 11, 3) # bottom left |
+		fill_rectangle(8, 5, 14, 7, 3) #bottom -
+	elif(minLeft == 3):
+		fill_rectangle(8, 13, 14, 15, 3) # top -
+		fill_rectangle(8, 9, 10, 15, 3)  # right top |
+		fill_rectangle(8, 9, 14, 11, 3) # mid -
+		fill_rectangle(8, 5, 10, 11, 3) # bottom right |
+		fill_rectangle(8, 5, 14, 7, 3) #bottom -
+	elif(minLeft == 4):
+		fill_rectangle(8, 9, 10, 15, 3)  # right top |	
+		fill_rectangle(8, 9, 14, 11, 3) # mid -
+		fill_rectangle(12, 9, 14, 15, 3) # left top |
+		fill_rectangle(8, 5, 10, 11, 3) # bottom right |
+	elif(minLeft == 5):
+		fill_rectangle(8, 13, 14, 15, 3) # top -
+		fill_rectangle(8, 9, 14, 11, 3) # mid -
+		fill_rectangle(12, 9, 14, 15, 3) # left top |
+		fill_rectangle(8, 5, 10, 11, 3) # bottom right |
+		fill_rectangle(8, 5, 14, 7, 3) #bottom -
+	elif(minLeft == 6):
+		fill_rectangle(8, 13, 14, 15, 3) # top -
+		fill_rectangle(8, 9, 14, 11, 3) # mid -
+		fill_rectangle(12, 9, 14, 15, 3) # left top |
+		fill_rectangle(8, 5, 10, 11, 3) # bottom right |
+		fill_rectangle(12, 5, 14, 11, 3) # bottom left |
+		fill_rectangle(8, 5, 14, 7, 3) #bottom -
+	elif(minLeft == 7):
+		fill_rectangle(8, 13, 14, 15, 3) # top -
+		fill_rectangle(8, 9, 10, 15, 3)  # right top |
+		fill_rectangle(8, 5, 10, 11, 3) # bottom right |
+	elif(minLeft == 8):
+		fill_rectangle(8, 13, 14, 15, 3) # top -
+		fill_rectangle(8, 9, 10, 15, 3)  # right top |
+		fill_rectangle(8, 9, 14, 11, 3) # mid -
+		fill_rectangle(12, 9, 14, 15, 3) # left top |
+		fill_rectangle(8, 5, 10, 11, 3) # bottom right |
+		fill_rectangle(12, 5, 14, 11, 3) # bottom left |
+		fill_rectangle(8, 5, 14, 7, 3) #bottom -
+	elif(minLeft == 9):
+		fill_rectangle(8, 13, 14, 15, 3) # top -
+		fill_rectangle(8, 9, 10, 15, 3)  # right top |
+		fill_rectangle(8, 9, 14, 11, 3) # mid -
+		fill_rectangle(12, 9, 14, 15, 3) # left top |
+		fill_rectangle(8, 5, 10, 11, 3) # bottom right |
+		fill_rectangle(8, 5, 14, 7, 3) #bottom -
+	elif(minLeft == 0):
+		fill_rectangle(8, 13, 14, 15, 3) # top -
+		fill_rectangle(8, 9, 10, 15, 3)  # right top |
+		fill_rectangle(12, 9, 14, 15, 3) # left top |
+		fill_rectangle(8, 5, 10, 11, 3) # bottom right |
+		fill_rectangle(12, 5, 14, 11, 3) # bottom left |
+		fill_rectangle(8, 5, 14, 7, 3) #bottom -
 	
 #3             x   y   x   y
 #fill_rectangle(8, 13, 14, 15, 3) # top -
@@ -415,89 +417,20 @@ elif(minRight == 0):
 #fill_rectangle(1, 5, 7, 7, 3) # bottom -
 ################################################################
 
-if(hr1 == bad):
-	fill_rectangle(31, 0, 32, 1, bad)
-elif(hr1 == ok):
-	fill_rectangle(31, 0, 32, 1, ok)	
-elif(hr1 == good):
-	fill_rectangle(31, 0, 32, 1, good)
 
-if(hr2 == bad):
-	fill_rectangle(30, 0, 31, 1, bad)
-elif(hr2 == ok):
-	fill_rectangle(30, 0, 31, 1, ok)
-elif(hr2 == good):
-	fill_rectangle(30, 0, 31, 1, good)
+fill_rectangle(20, 0, 32, 1, hr1)
+fill_rectangle(20, 0, 31, 1, hr2)
+fill_rectangle(20, 0, 30, 1, hr3)
+fill_rectangle(20, 0, 29, 1, hr4)
+fill_rectangle(20, 0, 28, 1, hr5)
+fill_rectangle(20, 0, 27, 1, hr6)
+fill_rectangle(20, 0, 26, 1, hr7)
+fill_rectangle(20, 0, 25, 1, hr8)
+fill_rectangle(20, 0, 24, 1, hr9)
+fill_rectangle(20, 0, 23, 1, hr10)
+fill_rectangle(20, 0, 22, 1, hr11)
+fill_rectangle(20, 0, 21, 1, hr12)
 
-if(hr3 == bad):
-	fill_rectangle(29, 0, 30, 1, bad)
-elif(hr3 == ok):
-	fill_rectangle(29, 0, 30, 1, ok)
-elif(hr3 == good):
-	fill_rectangle(29 , 0, 30, 1, good)
-	
-if(hr4 == bad):
-	fill_rectangle(28, 0, 39, 1, bad)
-elif(hr4 == ok):
-	fill_rectangle(28, 0, 29, 1, ok)
-elif(hr4 == good):
-	fill_rectangle(28 , 0, 29, 1, good)
-
-if(hr5 == bad):
-	fill_rectangle(27, 0, 28, 1, bad)
-elif(hr5 == ok):
-	fill_rectangle(27, 0, 28, 1, ok)
-elif(hr5 == good):
-	fill_rectangle(27, 0, 28, 1, good)
-	
-if(hr6 == bad):
-	fill_rectangle(26, 0, 27, 1, bad)
-elif(hr6 == ok):
-	fill_rectangle(26, 0, 27, 1, ok)
-elif(hr6 == good):
-	fill_rectangle(26, 0, 27, 1, good)
-	
-if(hr7 == bad):
-	fill_rectangle(25, 0, 26, 1, bad)
-elif(hr7 == ok):
-	fill_rectangle(25, 0, 26, 1, ok)
-elif(hr7 == good):
-	fill_rectangle(25, 0, 26, 1, good)
-	
-if(hr8 == bad):
-	fill_rectangle(24, 0, 25, 1, bad)
-elif(hr8 == ok):
-	fill_rectangle(24, 0, 25, 1, ok)
-elif(hr8 == good):
-	fill_rectangle(24, 0, 25, 1, good)
-	
-if(hr9 == bad):
-	fill_rectangle(23, 0, 24, 1, bad)
-elif(hr9 == ok):
-	fill_rectangle(23, 0, 24, 1, ok)
-elif(hr9 == good):
-	fill_rectangle(23, 0, 24, 1, good)
-	
-if(hr10 == bad):
-	fill_rectangle(22, 0, 23, 1, bad)
-elif(hr10 == ok):
-	fill_rectangle(22, 0, 23, 1, ok)
-elif(hr10 == good):
-	fill_rectangle(22, 0, 23, 1, good)
-
-if(hr11 == bad):
-	fill_rectangle(21, 0, 22, 1, bad)
-elif(hr11 == ok):
-	fill_rectangle(21, 0, 22, 1, ok)
-elif(hr11 == good):
-	fill_rectangle(21, 0, 22, 1, good)
-
-if(hr12 == bad):
-	fill_rectangle(20, 0, 21, 1, bad)
-elif(hr12 == ok):
-	fill_rectangle(20, 0, 21, 1, ok)
-elif(hr12 == good):
-	fill_rectangle(20, 0, 21, 1, good)
 	
 while True:
 	refresh()
