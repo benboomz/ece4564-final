@@ -76,13 +76,16 @@ def on_new_msg(channel, delivery_info, msg_properties, msg):
 		print listofalarms
 		print 
 
-		for alarms, key in listofalarms.iteritems():
+		for alarms in listofalarms:
 			alarm_string = str(alarms)
 			if "Alarm" in alarm_string:
 				print alarm_string[15:].replace("'}","")
 			else:
-				for time, sleepquality in dayskey.iteritems():
-					print time, sleepquality
+				for days, dayskey in sleephistory.iteritems():
+					print
+					print days
+					for time, sleepquality in dayskey.iteritems():
+						print time, sleepquality
 
 	except ValueError, ve:
 		# Thrown by json.loads() if it could not parse a JSON object
