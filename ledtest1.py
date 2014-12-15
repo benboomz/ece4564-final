@@ -94,9 +94,59 @@ def fill_rectangle(x1, y1, x2, y2, color):
 def set_pixel(x, y, color):
     screen[y][x] = color
  
-fill_rectangle(0, 0, 12, 12, 1)
-fill_rectangle(20, 4, 30, 15, 2)
-fill_rectangle(15, 0, 19, 7, 7)
- 
+#fill_rectangle(0, 0, 12, 12, 1)
+#fill_rectangle(20, 4, 30, 15, 2)
+#fill_rectangle(15, 0, 19, 7, 7)
+##################################################################
+#first digit
+
+if(hourLeft == 1):
+	fill_rectangle(27, 5, 29, 15, 1)
+elif(hourLeft == 2):
+	
+	
+
+#fill_rectangle(27, 5, 29, 15, 1) #1
+fill_rectangle(25, 13, 31, 15, 1) # top -
+fill_rectangle(25, 9, 27, 15, 1) # right top |
+fill_rectangle(25, 9, 31, 11, 1) # mid -
+fill_rectangle(29, 9, 31, 15, 1) # left top |
+fill_rectangle(25, 5, 27, 11, 1) # bottom right |
+fill_rectangle(29, 5, 31, 11, 1) # bottom left |
+fill_rectangle(25, 5, 31, 7, 1) # bottom -
+
+##################################################################
+#2             x    y   x   y
+fill_rectangle(18, 13, 24, 15, 2) # top -
+fill_rectangle(18, 9, 20, 15, 2) # right top |
+fill_rectangle(18, 9, 24, 11, 2) # mid -
+fill_rectangle(22, 9, 24, 15, 2) # top left |
+fill_rectangle(18, 5, 20, 11, 2) # bottom  right |
+fill_rectangle(22, 5, 24, 11, 2) # bottom left |
+fill_rectangle(18, 5, 24, 7, 2) # bottom -
+
+#dots
+fill_rectangle(15, 11, 17, 13, 3)
+fill_rectangle(15, 7, 17, 9, 3)
+
+###################################################################
+#3             x   y   x   y
+fill_rectangle(8, 13, 14, 15, 3) # top -
+fill_rectangle(8, 9, 10, 15, 3)  # right top |
+fill_rectangle(8, 9, 14, 11, 3) # mid -
+fill_rectangle(12, 9, 14, 15, 3) # left top |
+fill_rectangle(8, 5, 10, 11, 3) # bottom right |
+fill_rectangle(12, 5, 14, 11, 3) # bottom left |
+fill_rectangle(8, 5, 14, 7, 3) #bottom -
+
+####################################################################
+#4             x  y  x   y
+fill_rectangle(1, 13, 7, 15, 3) # top
+fill_rectangle(1, 9, 3, 15, 3) # top right |
+fill_rectangle(1, 9, 7, 11, 3) # mid
+fill_rectangle(5, 9, 7, 15, 3)# top left | 
+fill_rectangle(1, 5, 3, 11, 3) # bottom right |
+fill_rectangle(5, 5, 7, 11, 3) # bottom left |
+fill_rectangle(1, 5, 7, 7, 3) # bottom -
 while True:
 	refresh()
