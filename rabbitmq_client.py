@@ -88,43 +88,15 @@ def on_new_msg(channel, delivery_info, msg_properties, msg):
 
 # Main function 
 def main(argv):
-	try:
-		opts, args = getopt.getopt(argv, "b:p:c:k:")
-	except getopt.GetoptError:
-		print "Error: input arguments not formatted correctly"
-		usage()
-		sys.exit(2)
 
-	broker = None
-	vhost = "sandbox"
-	login = "ECE4564-Fall2014"
-	password = "13ac0N!"
-	rkey = None
 
-	if "-b" not in (opt[0] for opt in opts) or "-k" not in (opt[0] for opt in opts):
-		print "Must provide flags and arguments for both message broker and routing key."
-		usage()
-		sys.exit(2)
+	broker = "netapps.ece.vt.edu"
+	vhost = "/2014/fall/sentry"
+	login = "sentry"
+	password = "ev3r*W@tchful09"
+	rkey = "bennybene"
 
-	for opt, arg in opts:
-		if opt == "-b":
-			broker = arg
-			print "Entered " + broker + " for message broker."
-		elif opt == "-p":
-			print "Entered " + vhost + " for virtual host."
-		elif opt == "-c":
-			if arg.find(":") == -1:
-				print "Credentials must be formatted as login:password"
-				usage()
-				sys.exit(2)
 
-			credentials = arg.split(":")
-			login = credentials[0]
-			password = credentials[1]
-			print "Entered " + credentials[0] + " for user name credentials."
-		elif opt == "-k":
-			rkey = arg
-			print "Entered " + rkey + " for routing key."
 			
 	message_broker = None
 	channel = None
