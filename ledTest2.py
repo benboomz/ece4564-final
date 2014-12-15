@@ -151,61 +151,18 @@ while True:
 
 
 	if(hrLeft == 1):
+		fill_rectangle(25, 13, 31, 15, 0) # top -
 		fill_rectangle(25, 9, 27, 15, colortochange) # right top |
+		fill_rectangle(25, 9, 31, 11, 0) # mid -
+		fill_rectangle(29, 9, 31, 15, 0) # left top |
+		fill_rectangle(29, 5, 31, 11, 0) # bottom left |
 		fill_rectangle(25, 5, 27, 11, colortochange) # bottom right |
-	elif(hrLeft == 2):
-		fill_rectangle(25, 13, 31, 15, colortochange) # top -
-		fill_rectangle(25, 9, 27, 15, colortochange) # right top |
-		fill_rectangle(25, 9, 31, 11, colortochange) # mid -
-		fill_rectangle(29, 5, 31, 11, colortochange) # bottom left |
-		fill_rectangle(25, 5, 31, 7, colortochange) # bottom -
-	elif(hrLeft ==3):
-		fill_rectangle(25, 13, 31, 15, colortochange) # top -
-		fill_rectangle(25, 9, 27, 15, colortochange) # right top |
-		fill_rectangle(25, 9, 31, 11, colortochange) # mid -
-		fill_rectangle(25, 5, 27, 11, colortochange) # bottom right |
-		fill_rectangle(25, 5, 31, 7, colortochange) # bottom -
-	elif(hrLeft ==4):
-		fill_rectangle(25, 9, 27, 15, colortochange) # right top |
-		fill_rectangle(25, 9, 31, 11, colortochange) # mid -
-		fill_rectangle(29, 9, 31, 15, colortochange) # left top |
-		fill_rectangle(25, 5, 27, 11, colortochange) # bottom right |
-	elif(hrLeft ==5):
-		fill_rectangle(25, 13, 31, 15, colortochange) # top -
-		fill_rectangle(29, 9, 31, 15, colortochange) # left top |
-		fill_rectangle(25, 9, 31, 11, colortochange) # mid -	
-		fill_rectangle(25, 5, 27, 11, colortochange) # bottom right |
-		fill_rectangle(25, 5, 31, 7, colortochange) # bottom -
-	elif(hrLeft ==6):
-		fill_rectangle(25, 13, 31, 15, colortochange) # top -
-		fill_rectangle(29, 9, 31, 15, colortochange) # left top |
-		fill_rectangle(25, 9, 31, 11, colortochange) # mid -	
-		fill_rectangle(25, 5, 27, 11, colortochange) # bottom right |
-		fill_rectangle(29, 5, 31, 11, colortochange) # bottom left |
-		fill_rectangle(25, 5, 31, 7, colortochange) # bottom -
-	elif(hrLeft == 7):
-		fill_rectangle(25, 13, 31, 15, colortochange) # top -
-		fill_rectangle(25, 9, 27, 15, colortochange) # right top |
-		fill_rectangle(25, 5, 27, 11, colortochange) # bottom right |
-	elif(hrLeft==8):
-		fill_rectangle(25, 13, 31, 15, colortochange) # top -	
-		fill_rectangle(25, 9, 27, 15, colortochange) # right top |
-		fill_rectangle(25, 9, 31, 11, colortochange) # mid -
-		fill_rectangle(29, 9, 31, 15, colortochange) # left top |
-		fill_rectangle(25, 5, 27, 11, colortochange) # bottom right |
-		fill_rectangle(29, 5, 31, 11, colortochange) # bottom left |
-		fill_rectangle(25, 5, 31, 7, colortochange) # bottom -
-	elif(hrLeft==9):
-		fill_rectangle(25, 13, 31, 15, colortochange) # top -
-		fill_rectangle(25, 9, 27, 15, colortochange) # right top |
-		fill_rectangle(25, 9, 31, 11, colortochange) # mid -
-		fill_rectangle(29, 9, 31, 15, colortochange) # left top |
-		fill_rectangle(25, 5, 27, 11, colortochange) # bottom right |
-		fill_rectangle(25, 5, 31, 7, colortochange) # bottom -
-	elif(hrLeft==0):
+		fill_rectangle(25, 5, 31, 7, 0) # bottom -
+	elif(hrLeft == 0):
 		fill_rectangle(25, 13, 31, 15, colortochange) # top -
 		fill_rectangle(25, 9, 27, 15, colortochange) # right top |
 		fill_rectangle(29, 9, 31, 15, colortochange) # left top |
+		fill_rectangle(25, 9, 31, 11, 0) # mid -
 		fill_rectangle(25, 5, 27, 11, colortochange) # bottom right |
 		fill_rectangle(29, 5, 31, 11, colortochange) # bottom left |
 		fill_rectangle(25, 5, 31, 7, colortochange) # bottom -
@@ -222,42 +179,61 @@ while True:
 ##################################################################
 
 	if(hrRight == 1):
-		fill_rectangle(18, 9, 20, 15, colortochange) # right top |
+		fill_rectangle(18, 13, 24, 15, 0) # top -
+		fill_rectangle(18, 9, 20, 15, colortochange) # top right |
+		fill_rectangle(18, 9, 24, 11, 0) # mid -
+		fill_rectangle(22, 9, 24, 15, 0) # top left |
 		fill_rectangle(18, 5, 20, 11, colortochange) # bottom  right |
-	elif(hrRight == 2):
+		fill_rectangle(22, 5, 24, 11, 0) # bottom left |
+		fill_rectangle(18, 5, 24, 7, 0) # bottom -
+	elif(hrRight == 2):		
 		fill_rectangle(18, 13, 24, 15, colortochange) # top -
-		fill_rectangle(18, 9, 20, 15, colortochange) # right top |
+		fill_rectangle(18, 9, 20, 15, colortochange) # top right |
 		fill_rectangle(18, 9, 24, 11, colortochange) # mid -
+		fill_rectangle(22, 9, 24, 15, 0) # top left |
+		fill_rectangle(18, 5, 20, 11, 0) # bottom  right |
 		fill_rectangle(22, 5, 24, 11, colortochange) # bottom left |
 		fill_rectangle(18, 5, 24, 7, colortochange) # bottom -
 	elif(hrRight == 3):
 		fill_rectangle(18, 13, 24, 15, colortochange) # top -
 		fill_rectangle(18, 9, 20, 15, colortochange) # right top |
 		fill_rectangle(18, 9, 24, 11, colortochange) # mid -
+		fill_rectangle(22, 9, 24, 15, 0) # top left |
 		fill_rectangle(18, 5, 20, 11, colortochange) # bottom  right |
+		fill_rectangle(22, 5, 24, 11, 0) # bottom left |
 		fill_rectangle(18, 5, 24, 7, colortochange) # bottom -
-	elif(hrRight == 4):
+	elif(hrRight == 4):		
+		fill_rectangle(18, 13, 24, 15, 0) # top -
 		fill_rectangle(18, 9, 20, 15, colortochange) # right top |
 		fill_rectangle(18, 9, 24, 11, colortochange) # mid -
 		fill_rectangle(22, 9, 24, 15, colortochange) # top left |
 		fill_rectangle(18, 5, 20, 11, colortochange) # bottom  right |
-	elif(hrRight == 5):
+		fill_rectangle(22, 5, 24, 11, 0) # bottom left |
+		fill_rectangle(18, 5, 24, 7, 0) # bottom -
+	elif(hrRight == 5):		
 		fill_rectangle(18, 13, 24, 15, colortochange) # top -
-		fill_rectangle(18, 9, 24, 11, colortochange) # mid -
-		fill_rectangle(22, 9, 24, 15, colortochange) # top left |	
-		fill_rectangle(18, 5, 20, 11, colortochange) # bottom  right |
-		fill_rectangle(18, 5, 24, 7, colortochange) # bottom -
-	elif(hrRight == 6):
-		fill_rectangle(18, 13, 24, 15, colortochange) # top -
+		fill_rectangle(18, 9, 20, 15, 0) # right top |
 		fill_rectangle(18, 9, 24, 11, colortochange) # mid -
 		fill_rectangle(22, 9, 24, 15, colortochange) # top left |
+		fill_rectangle(18, 5, 20, 11, colortochange) # bottom  right |
+		fill_rectangle(22, 5, 24, 11, 0) # bottom left |
+		fill_rectangle(18, 5, 24, 7, colortochange) # bottom -	
+	elif(hrRight == 6):
+		fill_rectangle(18, 13, 24, 15, colortochange) # top -
+		fill_rectangle(18, 9, 20, 15, colortochange) # right top |
+		fill_rectangle(18, 9, 24, 11, colortochange) # mid -
+		fill_rectangle(22, 9, 24, 15, 0) # top left |
 		fill_rectangle(18, 5, 20, 11, colortochange) # bottom  right |
 		fill_rectangle(22, 5, 24, 11, colortochange) # bottom left |
 		fill_rectangle(18, 5, 24, 7, colortochange) # bottom -
 	elif(hrRight == 7):
 		fill_rectangle(18, 13, 24, 15, colortochange) # top -
 		fill_rectangle(18, 9, 20, 15, colortochange) # right top |
+		fill_rectangle(18, 9, 24, 11, 0) # mid -
+		fill_rectangle(22, 9, 24, 15, 0) # top left |
 		fill_rectangle(18, 5, 20, 11, colortochange) # bottom  right |
+		fill_rectangle(22, 5, 24, 11, 0) # bottom left |
+		fill_rectangle(18, 5, 24, 7, 0) # bottom -
 	elif(hrRight == 8):
 		fill_rectangle(18, 13, 24, 15, colortochange) # top -
 		fill_rectangle(18, 9, 20, 15, colortochange) # right top |
@@ -272,10 +248,12 @@ while True:
 		fill_rectangle(18, 9, 24, 11, colortochange) # mid -
 		fill_rectangle(22, 9, 24, 15, colortochange) # top left |
 		fill_rectangle(18, 5, 20, 11, colortochange) # bottom  right |
+		fill_rectangle(22, 5, 24, 11, 0) # bottom left |
 		fill_rectangle(18, 5, 24, 7, colortochange) # bottom -
 	elif(hrRight == 0):
 		fill_rectangle(18, 13, 24, 15, colortochange) # top -
 		fill_rectangle(18, 9, 20, 15, colortochange) # right top |
+		fill_rectangle(18, 9, 24, 11, 0) # mid -
 		fill_rectangle(22, 9, 24, 15, colortochange) # top left |
 		fill_rectangle(18, 5, 20, 11, colortochange) # bottom  right |
 		fill_rectangle(22, 5, 24, 11, colortochange) # bottom left |
@@ -296,33 +274,48 @@ while True:
 
 ###################################################################
 	if(minLeft == 1):
+		fill_rectangle(8, 13, 14, 15, 0) # top -
 		fill_rectangle(8, 9, 10, 15, colortochange)  # right top |
+		fill_rectangle(8, 9, 14, 11, 0) # mid -
+		fill_rectangle(12, 9, 14, 15, 0) # left top |
 		fill_rectangle(8, 5, 10, 11, colortochange) # bottom right |
+		fill_rectangle(12, 5, 14, 11, 0) # bottom left |
+		fill_rectangle(8, 5, 14, 7, 0) #bottom -
 	elif(minLeft == 2):
 		fill_rectangle(8, 13, 14, 15, colortochange) # top -
 		fill_rectangle(8, 9, 10, 15, colortochange)  # right top |
-		fill_rectangle(8, 9, 14, 11, colortochange) # mid -	
+		fill_rectangle(8, 9, 14, 11, colortochange) # mid -
+		fill_rectangle(12, 9, 14, 15, 0) # left top |
+		fill_rectangle(8, 5, 10, 11, 0) # bottom right |
 		fill_rectangle(12, 5, 14, 11, colortochange) # bottom left |
 		fill_rectangle(8, 5, 14, 7, colortochange) #bottom -
 	elif(minLeft == 3):
 		fill_rectangle(8, 13, 14, 15, colortochange) # top -
 		fill_rectangle(8, 9, 10, 15, colortochange)  # right top |
 		fill_rectangle(8, 9, 14, 11, colortochange) # mid -
+		fill_rectangle(12, 9, 14, 15, 0) # left top |
 		fill_rectangle(8, 5, 10, 11, colortochange) # bottom right |
+		fill_rectangle(12, 5, 14, 11, 0) # bottom left |
 		fill_rectangle(8, 5, 14, 7, colortochange) #bottom -
 	elif(minLeft == 4):
-		fill_rectangle(8, 9, 10, 15, colortochange)  # right top |	
+		fill_rectangle(8, 13, 14, 15, 0) # top -
+		fill_rectangle(8, 9, 10, 15, colortochange)  # right top |
 		fill_rectangle(8, 9, 14, 11, colortochange) # mid -
 		fill_rectangle(12, 9, 14, 15, colortochange) # left top |
 		fill_rectangle(8, 5, 10, 11, colortochange) # bottom right |
+		fill_rectangle(12, 5, 14, 11, 0) # bottom left |
+		fill_rectangle(8, 5, 14, 7, 0) #bottom -	
 	elif(minLeft == 5):
 		fill_rectangle(8, 13, 14, 15, colortochange) # top -
+		fill_rectangle(8, 9, 10, 15, 0)  # right top |
 		fill_rectangle(8, 9, 14, 11, colortochange) # mid -
 		fill_rectangle(12, 9, 14, 15, colortochange) # left top |
 		fill_rectangle(8, 5, 10, 11, colortochange) # bottom right |
+		fill_rectangle(12, 5, 14, 11, 0) # bottom left |
 		fill_rectangle(8, 5, 14, 7, colortochange) #bottom -
 	elif(minLeft == 6):
 		fill_rectangle(8, 13, 14, 15, colortochange) # top -
+		fill_rectangle(8, 9, 10, 15, 0)  # right top |
 		fill_rectangle(8, 9, 14, 11, colortochange) # mid -
 		fill_rectangle(12, 9, 14, 15, colortochange) # left top |
 		fill_rectangle(8, 5, 10, 11, colortochange) # bottom right |
@@ -331,7 +324,11 @@ while True:
 	elif(minLeft == 7):
 		fill_rectangle(8, 13, 14, 15, colortochange) # top -
 		fill_rectangle(8, 9, 10, 15, colortochange)  # right top |
+		fill_rectangle(8, 9, 14, 11, colortochange) # mid -
+		fill_rectangle(12, 9, 14, 15, 0) # left top |
 		fill_rectangle(8, 5, 10, 11, colortochange) # bottom right |
+		fill_rectangle(12, 5, 14, 11, 0) # bottom left |
+		fill_rectangle(8, 5, 14, 7, 0) #bottom -
 	elif(minLeft == 8):
 		fill_rectangle(8, 13, 14, 15, colortochange) # top -
 		fill_rectangle(8, 9, 10, 15, colortochange)  # right top |
@@ -346,10 +343,12 @@ while True:
 		fill_rectangle(8, 9, 14, 11, colortochange) # mid -
 		fill_rectangle(12, 9, 14, 15, colortochange) # left top |
 		fill_rectangle(8, 5, 10, 11, colortochange) # bottom right |
+		fill_rectangle(12, 5, 14, 11, 0) # bottom left |
 		fill_rectangle(8, 5, 14, 7, colortochange) #bottom -
 	elif(minLeft == 0):
 		fill_rectangle(8, 13, 14, 15, colortochange) # top -
 		fill_rectangle(8, 9, 10, 15, colortochange)  # right top |
+		fill_rectangle(8, 9, 14, 11, 0) # mid -
 		fill_rectangle(12, 9, 14, 15, colortochange) # left top |
 		fill_rectangle(8, 5, 10, 11, colortochange) # bottom right |
 		fill_rectangle(12, 5, 14, 11, colortochange) # bottom left |
@@ -367,33 +366,48 @@ while True:
 ####################################################################
 
 	if(minRight == 1):
+		fill_rectangle(1, 13, 7, 15, 0) # top
 		fill_rectangle(1, 9, 3, 15, colortochange) # top right |
+		fill_rectangle(1, 9, 7, 11, 0) # mid
+		fill_rectangle(5, 9, 7, 15, 0) # top left | 
 		fill_rectangle(1, 5, 3, 11, colortochange) # bottom right |
+		fill_rectangle(5, 5, 7, 11, 0) # bottom left |
+		fill_rectangle(1, 5, 7, 7, 0) # bottom -
 	elif(minRight == 2):
 		fill_rectangle(1, 13, 7, 15, colortochange) # top
 		fill_rectangle(1, 9, 3, 15, colortochange) # top right |
 		fill_rectangle(1, 9, 7, 11, colortochange) # mid
+		fill_rectangle(5, 9, 7, 15, 0) # top left | 
+		fill_rectangle(1, 5, 3, 11, 0) # bottom right |
 		fill_rectangle(5, 5, 7, 11, colortochange) # bottom left |
 		fill_rectangle(1, 5, 7, 7, colortochange) # bottom -
 	elif(minRight == 3):
 		fill_rectangle(1, 13, 7, 15, colortochange) # top
 		fill_rectangle(1, 9, 3, 15, colortochange) # top right |
 		fill_rectangle(1, 9, 7, 11, colortochange) # mid
+		fill_rectangle(5, 9, 7, 15, 0) # top left | 
 		fill_rectangle(1, 5, 3, 11, colortochange) # bottom right |
+		fill_rectangle(5, 5, 7, 11, 0) # bottom left |
 		fill_rectangle(1, 5, 7, 7, colortochange) # bottom -
 	elif(minRight == 4):
+		fill_rectangle(1, 13, 7, 15, 0) # top
 		fill_rectangle(1, 9, 3, 15, colortochange) # top right |
 		fill_rectangle(1, 9, 7, 11, colortochange) # mid
 		fill_rectangle(5, 9, 7, 15, colortochange) # top left | 
 		fill_rectangle(1, 5, 3, 11, colortochange) # bottom right |
+		fill_rectangle(5, 5, 7, 11, 0) # bottom left |
+		fill_rectangle(1, 5, 7, 7, 0) # bottom -
 	elif(minRight == 5):
 		fill_rectangle(1, 13, 7, 15, colortochange) # top
+		fill_rectangle(1, 9, 3, 15, 0) # top right |
 		fill_rectangle(1, 9, 7, 11, colortochange) # mid
 		fill_rectangle(5, 9, 7, 15, colortochange) # top left | 
 		fill_rectangle(1, 5, 3, 11, colortochange) # bottom right |
+		fill_rectangle(5, 5, 7, 11, 0) # bottom left |
 		fill_rectangle(1, 5, 7, 7, colortochange) # bottom -
 	elif(minRight == 6):
 		fill_rectangle(1, 13, 7, 15, colortochange) # top
+		fill_rectangle(1, 9, 3, 15, 0) # top right |
 		fill_rectangle(1, 9, 7, 11, colortochange) # mid
 		fill_rectangle(5, 9, 7, 15, colortochange) # top left | 
 		fill_rectangle(1, 5, 3, 11, colortochange) # bottom right |
@@ -402,7 +416,11 @@ while True:
 	elif(minRight == 7):
 		fill_rectangle(1, 13, 7, 15, colortochange) # top
 		fill_rectangle(1, 9, 3, 15, colortochange) # top right |
+		fill_rectangle(1, 9, 7, 11, 0) # mid
+		fill_rectangle(5, 9, 7, 15, 0) # top left | 
 		fill_rectangle(1, 5, 3, 11, colortochange) # bottom right |
+		fill_rectangle(5, 5, 7, 11, 0) # bottom left |
+		fill_rectangle(1, 5, 7, 7, 0) # bottom -
 	elif(minRight == 8):
 		fill_rectangle(1, 13, 7, 15, colortochange) # top
 		fill_rectangle(1, 9, 3, 15, colortochange) # top right |
@@ -415,12 +433,14 @@ while True:
 		fill_rectangle(1, 13, 7, 15, colortochange) # top
 		fill_rectangle(1, 9, 3, 15, colortochange) # top right |
 		fill_rectangle(1, 9, 7, 11, colortochange) # mid
-		fill_rectangle(5, 9, 7, 15, colortochange)# top left | 
+		fill_rectangle(5, 9, 7, 15, colortochange) # top left | 
 		fill_rectangle(1, 5, 3, 11, colortochange) # bottom right |
+		fill_rectangle(5, 5, 7, 11, 0) # bottom left |
 		fill_rectangle(1, 5, 7, 7, colortochange) # bottom -
 	elif(minRight == 0):
 		fill_rectangle(1, 13, 7, 15, colortochange) # top
 		fill_rectangle(1, 9, 3, 15, colortochange) # top right |
+		fill_rectangle(1, 9, 7, 11, 0) # mid
 		fill_rectangle(5, 9, 7, 15, colortochange) # top left | 
 		fill_rectangle(1, 5, 3, 11, colortochange) # bottom right |
 		fill_rectangle(5, 5, 7, 11, colortochange) # bottom left |
