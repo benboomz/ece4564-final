@@ -435,8 +435,69 @@ elif(hr3 == ok):
 	fill_rectangle(29, 0, 30, 1, ok)
 elif(hr3 == good):
 	fill_rectangle(29 , 0, 30, 1, good)
+	
+if(hr4 == bad):
+	fill_rectangle(28, 0, 39, 1, bad)
+elif(hr4 == ok):
+	fill_rectangle(28, 0, 29, 1, ok)
+elif(hr4 == good):
+	fill_rectangle(28 , 0, 29, 1, good)
 
+if(hr5 == bad):
+	fill_rectangle(27, 0, 28, 1, bad)
+elif(hr5 == ok):
+	fill_rectangle(27, 0, 28, 1, ok)
+elif(hr5 == good):
+	fill_rectangle(27, 0, 28, 1, good)
+	
+if(hr6 == bad):
+	fill_rectangle(26, 0, 27, 1, bad)
+elif(hr6 == ok):
+	fill_rectangle(26, 0, 27, 1, ok)
+elif(hr6 == good):
+	fill_rectangle(26, 0, 27, 1, good)
+	
+if(hr7 == bad):
+	fill_rectangle(25, 0, 26, 1, bad)
+elif(hr7 == ok):
+	fill_rectangle(25, 0, 26, 1, ok)
+elif(hr7 == good):
+	fill_rectangle(25, 0, 26, 1, good)
+	
+if(hr8 == bad):
+	fill_rectangle(24, 0, 25, 1, bad)
+elif(hr8 == ok):
+	fill_rectangle(24, 0, 25, 1, ok)
+elif(hr8 == good):
+	fill_rectangle(24, 0, 25, 1, good)
+	
+if(hr9 == bad):
+	fill_rectangle(23, 0, 24, 1, bad)
+elif(hr9 == ok):
+	fill_rectangle(23, 0, 24, 1, ok)
+elif(hr9 == good):
+	fill_rectangle(23, 0, 24, 1, good)
+	
+if(hr10 == bad):
+	fill_rectangle(22, 0, 23, 1, bad)
+elif(hr10 == ok):
+	fill_rectangle(22, 0, 23, 1, ok)
+elif(hr10 == good):
+	fill_rectangle(22, 0, 23, 1, good)
 
+if(hr11 == bad):
+	fill_rectangle(21, 0, 22, 1, bad)
+elif(hr11 == ok):
+	fill_rectangle(21, 0, 22, 1, ok)
+elif(hr11 == good):
+	fill_rectangle(21, 0, 22, 1, good)
 
+if(hr12 == bad):
+	fill_rectangle(20, 0, 21, 1, bad)
+elif(hr12 == ok):
+	fill_rectangle(20, 0, 21, 1, ok)
+elif(hr12 == good):
+	fill_rectangle(20, 0, 21, 1, good)
+	
 while True:
 	refresh()
