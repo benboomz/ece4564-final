@@ -81,7 +81,7 @@ def on_new_msg(channel, delivery_info, msg_properties, msg):
 			if "Alarm" in alarm_string:
 				print alarm_string[15:].replace("'}","")
 			else:
-				for days, dayskey in sleephistory.iteritems():
+				for days, dayskey in alarms.iteritems():
 					print
 					print days
 					for time, sleepquality in dayskey.iteritems():
