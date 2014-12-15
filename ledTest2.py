@@ -132,6 +132,23 @@ def set_pixel(x, y, color):
 #first digit
 
 while True: 
+	
+	time.ctime()
+	hour = time.strftime("%I")
+	minute = time.strftime("%M")
+
+	if hour < 10:
+		hrLeft = 0
+		hrRight = int(hour[1])
+	else:
+		hrLeft = int(hour[0])
+		hrRight = int(hour[1])
+	
+	minLeft = int(minute[0])
+	minRight = int(minute[1])
+	
+	print hrLeft, hrRight, minLeft, minRight	
+
 
 	if(hrLeft == 1):
 		fill_rectangle(25, 9, 27, 15, colortochange) # right top |
@@ -420,19 +437,21 @@ while True:
 ################################################################
 
 
-fill_rectangle(20, 0, 32, 1, hr1)
-fill_rectangle(20, 0, 31, 1, hr2)
-fill_rectangle(20, 0, 30, 1, hr3)
-fill_rectangle(20, 0, 29, 1, hr4)
-fill_rectangle(20, 0, 28, 1, hr5)
-fill_rectangle(20, 0, 27, 1, hr6)
-fill_rectangle(20, 0, 26, 1, hr7)
-fill_rectangle(20, 0, 25, 1, hr8)
-fill_rectangle(20, 0, 24, 1, hr9)
-fill_rectangle(20, 0, 23, 1, hr10)
-fill_rectangle(20, 0, 22, 1, hr11)
-fill_rectangle(20, 0, 21, 1, hr12)
+	fill_rectangle(20, 0, 32, 1, hr1)
+	fill_rectangle(20, 0, 31, 1, hr2)
+	fill_rectangle(20, 0, 30, 1, hr3)
+	fill_rectangle(20, 0, 29, 1, hr4)
+	fill_rectangle(20, 0, 28, 1, hr5)
+	fill_rectangle(20, 0, 27, 1, hr6)
+	fill_rectangle(20, 0, 26, 1, hr7)
+	fill_rectangle(20, 0, 25, 1, hr8)
+	fill_rectangle(20, 0, 24, 1, hr9)
+	fill_rectangle(20, 0, 23, 1, hr10)
+	fill_rectangle(20, 0, 22, 1, hr11)
+	fill_rectangle(20, 0, 21, 1, hr12)
 
 	
-while True:
-	refresh()
+	counter = 0
+	while counter != 30:	
+		refresh()
+		counter = counter + 1
