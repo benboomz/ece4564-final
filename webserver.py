@@ -161,6 +161,24 @@ class LogoutPage(Resource):
             request.finish()
             return server.NOT_DONE_YET
 
+class CreateAlarmPage(Resource):
+    isLeaf = True
+
+    def __init__(self):
+        self.presence=[]
+        Resource.__init__(self)
+
+    def render_GET(self, request):
+        with open("createalarm.html", "r+") as myfile:
+            data=myfile.read()
+            request.write(data)
+            self.presence.append(request)
+            request.finish()
+            return server.NOT_DONE_YET
+
+
+
+
 FLAGS = gflags.FLAGS
 
 # Set up a Flow object to be used if we need to authenticate. This
