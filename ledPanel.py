@@ -129,9 +129,13 @@ def set_pixel(x, y, color):
 #fill_rectangle(15, 0, 19, 7, 7)
 ##################################################################
 #first digit
-
+anothercounter = 0
 while True: 
-	
+	anothercounter = anothercounter + 1
+	if anothercounter%1 == 0:
+		colortochange = (colortochange + 1) % 4
+		if colortochange == 0:
+			colortochange = 1
 	time.ctime()
 	hour = time.strftime("%I")
 	minute = time.strftime("%M")
