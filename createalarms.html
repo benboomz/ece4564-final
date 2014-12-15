@@ -25,15 +25,18 @@
 
     <div class="container">
         <div class="jumbotron">
-            <h1>Smart Alarm Clock</h1>
-            <h4 id="time"></h4>
+            <h2>Create New Alarm</h2>
+            <form method="POST">
+                <input type="date" name="alarmdate">
+                <input type="time" name="alarmtime">
+                <br>
+                <br>
+                <p class="submit">
+                    <input type="submit" name="create" value="Submit">
+                </p>
+            </form>
         </div>
 
-        <div id="sleepcyclehistory"> 
-            alarmlist
-        </div>
-        <br>
-        <button type="button"><a href="createalarms.html">Add Alarm</a></button>
 
     </div>
 

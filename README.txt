@@ -2,6 +2,9 @@ Final Project
 ECE 4564
 
 Smart Alarm Clock
+-----------------
+
+- To ensure all features work, please use Google Chrome as your browser
 
 
 ADXL345:

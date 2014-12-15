@@ -77,13 +77,14 @@ class AlarmPage(Resource):
 
         with open("alarms.txt", "r+") as alarmfile:
             alarmlist = alarmfile.readlines()
+
             html = ""
+
         for alarms in alarmlist:
-            html += '''<div class="row">''' + alarms + "</div"
-            html += "<br>"
+            html += '''<div class="row">''' + alarms + "</div>"
 
 
-        new = data.replace("sleepcycles", str(html))
+        new = data.replace("alarmlist", str(html))
         request.write(new)
         self.presence.append(request)
         request.finish()
@@ -169,14 +170,34 @@ class CreateAlarmPage(Resource):
         Resource.__init__(self)
 
     def render_GET(self, request):
-        with open("createalarm.html", "r+") as myfile:
+        with open("createalarms.html", "r+") as myfile:
             data=myfile.read()
             request.write(data)
             self.presence.append(request)
             request.finish()
             return server.NOT_DONE_YET
 
+    def render_POST(self, request):
+        time = datetime.datetime.strptime(request.args["alarmtime"][0], "%H:%M")
+        date = datetime.datetime.strptime(request.args["alarmdate"][0], '%Y-%m-%d')
 
+        alarm = date.strftime('%m/%d/%y') + " " + time.strftime("%I:%M %p")
+        # with open("alarms.txt", "a") as alarmfile:
+        #     alarmfile.write(alarm)
+        #     alarmfile.close()
+        with open("alarms.txt", "r+") as alarmfile:
+            alarmlist = [line for line in alarmfile if line.strip()]
+            alarmlist.append(alarm + '\n')
+            alarmlist.sort()
+
+            alarmfile.seek(0)
+            alarmfile.truncate()
+            alarmfile.writelines(alarmlist)
+
+
+        request.redirect("alarms.html")
+        request.finish()
+        return server.NOT_DONE_YET
 
 
 FLAGS = gflags.FLAGS
@@ -202,6 +223,7 @@ root.putChild('', LoginPage())
 root.putChild("home.html", ClockPage())
 root.putChild("alarms.html", AlarmPage())
 root.putChild("logout.html", LogoutPage())
+root.putChild("createalarms.html", CreateAlarmPage())
 root.putChild("style.css", static.File("style.css"))
 root.putChild("bootstrap", static.File("./bootstrap"))
 factory = Site(root)
