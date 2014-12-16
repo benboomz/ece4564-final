@@ -10,7 +10,7 @@ minx = miny = minz = 100
 maxx = maxy = maxz = -100
 print
 
-with open('sleephistory.json') as json_data:
+with open('sleephistory.json', 'r+') as json_data:
     sleephistory = json.load(json_data)
 
 
@@ -83,15 +83,23 @@ while 1:
             avgrange = round((rangex+rangey+rangez)/3, 2)
             
             if avgrange > 0.50:
-                print "red"
+                sleepcolor =  "red"
+                sleepquality = "awake"
             elif avgrange < 0.20:
-                print "green"
+                sleepcolor =  "green"
+                sleepquality = "rem sleep"
             else:
-                print "yellow"
+                sleepcolor = "yellow"
+                sleepquality = "light sleep"
 
             print "\t" + str(avgrange)
             print "\t" + str(rangex), str(rangey), str(rangez)
             print       
+
+            sleephistory[date][minute+":00:00"] = sleepquality
+
+            with open('sleephistory.json','w') as outfile:
+                json.dump(sleephistory, outfile, indent=4)
     
 
             xsum = ysum = zsum = 0
@@ -102,3 +110,17 @@ while 1:
             hourtrigger = 0
 
         time.sleep(0.1) 
+
+        time.ctime()
+        hour = time.strftime("%H")
+        minute = time.strftime("%M")
+        date = time.strftime("%Y-%m-%d")
+
+        minutetrigger = 0
+        if minute == "00":
+            minutetrigger = 1
+        else:
+            minutetrigger = 0
+
+        if hour > 22 or hour < 10:
+            hourtrigger = 1
