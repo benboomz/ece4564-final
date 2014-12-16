@@ -84,107 +84,11 @@ def parsestring(stringtoparse):
         return ""
 
 def accelerometer():
-    adxl345 = ADXL345()
-
-    count = 1
-
-    xsum = 0.0
-    ysum = 0.0
-    zsum = 0.0
-
-    minx = miny = minz = 100
-    maxx = maxy = maxz = -100
-    print
+    execfile("accelerometer.py")
 
 
-    while 1:    
-
-        time.ctime()
-        hour = time.strftime("%H")
-        minute = time.strftime("%M")
-
-        minutetrigger = 0
-        if minute == "00":
-            minutetrigger = 1
-        else:
-            minutetrigger = 0
-
-        if hour > 22 or hour < 10:
-            hourtrigger = 1
-
-        # if it is between 10 pm and 10 am, and the minute is 00, start reading from accelerometer
-        # the accelerometer will average the amount of movements from each axis for every hour
-        while minutetrigger and hourtrigger:
-
-            axes = adxl345.getAxes(True)
-            
-            x = axes['x']
-            y = axes['y']
-            z = axes['z']
-            
-            count = count + 1   
-            xsum = xsum + x
-            ysum = ysum + y
-            zsum = zsum + z
-                
-            if x < minx:
-                minx = x
-            if y < miny:
-                miny = y
-            if z < minz:
-                minz = z
-
-            if x > maxx:
-                maxx = x
-            if y > maxy:
-                maxy = y
-            if z > maxz:
-                maxz = z
-
-            #count = 600 is a minute
-            # 36000 is an hour
-            if count == 36000:
-                count = 1
-                xavg = xsum / 36000.0
-                yavg = ysum / 36000.0
-                zavg = zsum / 36000.0
-                
-                xavg = round(xavg, 2)
-                yavg = round(yavg, 2)
-                zavg = round(zavg, 2)
-                minx = round(minx, 2)
-                miny = round(miny, 2)
-                minz = round(minz, 2)
-                maxx = round(maxx, 2)
-                maxy = round(maxy, 2)
-                maxz = round(maxz, 2)
-                
-                rangex = maxx - minx
-                rangey = maxy - miny
-                rangez = maxz - minz
-
-                avgrange = round((rangex+rangey+rangez)/3, 2)
-                
-                if avgrange > 0.50:
-                    print "red"
-                elif avgrange < 0.20:
-                    print "green"
-                else:
-                    print "yellow"
-
-                print "\t" + str(avgrange)
-                print "\t" + str(rangex), str(rangey), str(rangez)
-                print       
-        
-
-                xsum = ysum = zsum = 0
-                minx = miny = minz = 100
-                maxx = maxy = maxz = -100
-
-            if hour == 10:
-                hourtrigger = 0
-
-            time.sleep(0.1) 
+def rabbitmq():
+    execfile("rabbitmq_server.py")
 
 
 # def calendar_events():
@@ -202,6 +106,15 @@ def accelerometer():
 
 # if __name__ == '__calendar_events__':
 #     calendar_events()
+
+accelerometerthread = Thread(target = accelerometer)
+accelerometerthread.start()
+accelerometerthread.join()
+
+rabbitthread = Thread(target = rabbitmq)
+rabbitthread.start()
+rabbitthread.join()
+
 
 while 1:
 
