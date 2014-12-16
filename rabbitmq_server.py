@@ -70,7 +70,7 @@ while 1:
 			message.append({"Alarm " + str(count): alarms.strip()})
 			count = count + 1
 
-	with open('sleephistory.json') as json_data:
+	with open('sleephistory.json', 'r+') as json_data:
 		sleephistory = json.load(json_data)
 
 	message.append(sleephistory)
