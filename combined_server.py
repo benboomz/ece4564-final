@@ -166,10 +166,10 @@ while 1:
             f.write(alarms)
 
     currenttime = time.strftime('%m/%d/%Y %l:%M %p') #11/30/14 5:34 PM
-    print currenttime
+    print alarms, currenttime
 
     for alarms in alarmlist:
-        if alarms.strip() == currenttime.strip():
+        if alarms.strip().replace(" ", "") == currenttime.strip().replace(" ", ""):
             pygame.mixer.init()
             pygame.mixer.music.load("alarm_beep.wav")
             pygame.mixer.music.play()
