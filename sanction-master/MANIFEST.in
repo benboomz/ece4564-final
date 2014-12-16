@@ -1,2 +1,0 @@
-include *.txt *.rst README LICENSE CHANGES 
-recursive-include . *.py 

@@ -68,8 +68,8 @@ while 1:
 		else:
 			print "yellow"
 
-		print "\t" + str(avgrange)
-		print "\t" + str(rangex), str(rangey), str(rangez)
+		print "\taverage range: " + str(avgrange)
+		print "\tx range: " + str(rangex) + "\ty range: " +  str(rangey) + "\tz range: " +  str(rangez)
 		print		
 				
 		'''
