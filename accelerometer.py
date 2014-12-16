@@ -29,7 +29,7 @@ while 1:
         #minutetrigger = 0
 	minutetrigger = 1
 	
-    if hour >= 21 or hour < 10:
+    if int(hour) <= 20 or int(hour) >= 9:
         hourtrigger = 1
 
     # if it is between 10 pm and 10 am, and the minute is 00, start reading from accelerometer
@@ -125,5 +125,5 @@ while 1:
         else:
             minutetrigger = 1
 
-        if hour >= 21 or hour < 10:
+        if int(hour) <= 20 or int(hour) >= 9:
             hourtrigger = 1
