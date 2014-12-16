@@ -6,6 +6,8 @@ import pprint
 import time as _time
 from threading import Thread
 from adxl345 import ADXL345
+import time
+import pygame
 
 STDOFFSET = timedelta(seconds = -_time.timezone)
 if _time.daylight:
@@ -163,7 +165,7 @@ while 1:
         for alarms in alarmlist:
             f.write(alarms)
 
-    currenttime = time.strftime('%m/%d/%Y%l:%M %p') #11/30/14 5:34 PM
+    currenttime = time.strftime('%m/%d/%Y %l:%M %p') #11/30/14 5:34 PM
     print currenttime
 
     for alarms in alarmlist:
@@ -176,4 +178,4 @@ while 1:
             
 
 
-    time.sleep(60)
+    time.sleep(10)

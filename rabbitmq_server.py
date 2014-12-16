@@ -66,9 +66,9 @@ while 1:
 	message = []
 	count = 1
 	for alarms in alarmlist:
-		if alarms  > currenttime:
-			message.append({"Alarm " + str(count): alarms.strip()})
-			count = count + 1
+		#if alarms  > currenttime:
+		message.append({"Alarm " + str(count): alarms.strip()})
+		count = count + 1
 
 	with open('sleephistory.json', 'r+') as json_data:
 		sleephistory = json.load(json_data)
