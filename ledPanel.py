@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 import time
- 
+
 delay = 0.000001
  
 GPIO.setmode(GPIO.BCM)
@@ -26,23 +26,24 @@ minRight = 1
 
 ########################################
 #sleep quality
+na = 0
 bad = 1
 ok = 3
 good = 2
 ########################################
 #hours
-hr1 = bad
-hr2 = bad
-hr3 = bad
-hr4 = bad
-hr5 = bad
-hr6 = bad
-hr7 = bad
-hr8 = bad
-hr9 = bad
-hr10 = bad
-hr11 = bad
-hr12 = bad
+hr1 = na
+hr2 = na
+hr3 = na
+hr4 = na
+hr5 = na
+hr6 = na
+hr7 = na
+hr8 = na
+hr9 = na
+hr10 = na
+hr11 = na
+hr12 = na
 
 colortochange = 2
 
@@ -131,12 +132,116 @@ def set_pixel(x, y, color):
 #first digit
 anothercounter = 0
 while True: 
-	anothercounter = anothercounter + 1
-	if anothercounter%1 == 0:
-		colortochange = (colortochange + 1) % 4
-		if colortochange == 0:
-			colortochange = 1
-	time.ctime()
+
+    with open("led_alarms.txt") as f:
+    	alarmlist = f.readlines()
+
+    with open("led_sleepquality.txt") as f:
+    	sleepqlist = f.readlines()
+
+    currentdate = time.strftime("%Y-%m-%d")
+    currenttime = time.strftime("%I:%M %p")
+    currentdateandtime = time.strftime("%d/%m/%y %I:%M %p")
+
+    #changes color of alarm if alarm goes off
+    for alarms in alarmlist:
+    	if currentdateandtime == alarms:
+    		anothercounter = anothercounter + 1
+			if anothercounter%1 == 0:
+				colortochange = (colortochange + 1) % 4
+				if colortochange == 0:
+					colortochange = 1
+	
+	listofcurrentsleepquality = []
+	for sleepquality in sleepqlist:
+		if currentdate in sleepquality:
+			if "21" in sleepquality:
+				if "rem" in sleepquality:
+					hr1 = good
+				elif "light" in sleepquality:
+					hr1 = okay
+				else
+					hr1 = bad
+			if "22" in sleepquality:
+				if "rem" in sleepquality:
+					hr2 = good
+				elif "light" in sleepquality:
+					hr2 = okay
+				else
+					hr2 = bad			
+			if "23" in sleepquality:
+				if "rem" in sleepquality:
+					hr3 = good
+				elif "light" in sleepquality:
+					hr3 = okay
+				else
+					hr3 = bad
+			if "24" in sleepquality:
+				if "rem" in sleepquality:
+					hr4 = good
+				elif "light" in sleepquality:
+					hr4 = okay
+				else
+					hr4 = bad
+			if "01" in sleepquality:
+				if "rem" in sleepquality:
+					hr5 = good
+				elif "light" in sleepquality:
+					hr5 = okay
+				else
+					hr5 = bad			
+			if "02" in sleepquality:
+				if "rem" in sleepquality:
+					hr6 = good
+				elif "light" in sleepquality:
+					hr6 = okay
+				else
+					hr6 = bad
+			if "03" in sleepquality:
+				if "rem" in sleepquality:
+					hr7 = good
+				elif "light" in sleepquality:
+					hr7 = okay
+				else
+					hr7 = bad
+			if "04" in sleepquality:
+				if "rem" in sleepquality:
+					hr8 = good
+				elif "light" in sleepquality:
+					hr8 = okay
+				else
+					hr8 = bad			
+			if "05" in sleepquality:
+				if "rem" in sleepquality:
+					hr9 = good
+				elif "light" in sleepquality:
+					hr9 = okay
+				else
+					hr9 = bad
+			if "06" in sleepquality:
+				if "rem" in sleepquality:
+					hr10 = good
+				elif "light" in sleepquality:
+					hr10 = okay
+				else
+					hr10 = bad
+			if "07" in sleepquality:
+				if "rem" in sleepquality:
+					hr11 = good
+				elif "light" in sleepquality:
+					hr11 = okay
+				else
+					hr11 = bad			
+			if "08" in sleepquality:
+				if "rem" in sleepquality:
+					hr12 = good
+				elif "light" in sleepquality:
+					hr12 = okay
+				else
+					hr12 = bad
+
+
+
 	hour = time.strftime("%I")
 	minute = time.strftime("%M")
 
