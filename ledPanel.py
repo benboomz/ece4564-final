@@ -153,89 +153,90 @@ while True:
 				colortochange = 1
 	
 	listofcurrentsleepquality = []
-	for sleepquality in sleepqlist:
-		if currentdate in sleepquality:
-			if "09" in sleepquality:
-				if "rem" in sleepquality:
+	for listofsleepquality in sleepqlist:
+		if currentdate in listofsleepquality:
+			sleepquality = listofsleepquality.split(" ")
+			if "09" in sleepquality[1]:
+				if "rem" in sleepquality[2]:
 					hr1 = good
-				elif "light" in sleepquality:
+				elif "light" in sleepquality[2]:
 					hr1 = okay
 				else:
 					hr1 = bad
-			if "10" in sleepquality:
-				if "rem" in sleepquality:
+			if "10" in sleepquality[1]:
+				if "rem" in sleepquality[2]:
 					hr2 = good
-				elif "light" in sleepquality:
+				elif "light" in sleepquality[2]:
 					hr2 = okay
 				else:
 					hr2 = bad			
-			if "11" in sleepquality:
-				if "rem" in sleepquality:
+			if "11" in sleepquality[1]:
+				if "rem" in sleepquality[2]:
 					hr3 = good
-				elif "light" in sleepquality:
+				elif "light" in sleepquality[2]:
 					hr3 = okay
 				else:
 					hr3 = bad
-			if "12" in sleepquality:
-				if "rem" in sleepquality:
+			if "12" in sleepquality[1]:
+				if "rem" in sleepquality[2]:
 					hr4 = good
-				elif "light" in sleepquality:
+				elif "light" in sleepquality[2]:
 					hr4 = okay
 				else:
 					hr4 = bad
-			if "13" in sleepquality:
-				if "rem" in sleepquality:
+			if "13" in sleepquality[1]:
+				if "rem" in sleepquality[2]:
 					hr5 = good
-				elif "light" in sleepquality:
+				elif "light" in sleepquality[2]:
 					hr5 = okay
 				else:
 					hr5 = bad			
-			if "14" in sleepquality:
-				if "rem" in sleepquality:
+			if "14" in sleepquality[1]:
+				if "rem" in sleepquality[2]:
 					hr6 = good
-				elif "light" in sleepquality:
+				elif "light" in sleepquality[2]:
 					hr6 = okay
 				else:
 					hr6 = bad
-			if "15" in sleepquality:
-				if "rem" in sleepquality:
+			if "15" in sleepquality[1]:
+				if "rem" in sleepquality[2]:
 					hr7 = good
-				elif "light" in sleepquality:
+				elif "light" in sleepquality[2]:
 					hr7 = okay
 				else:
 					hr7 = bad
-			if "16" in sleepquality:
+			if "16" in sleepquality[2]:
 				if "rem" in sleepquality:
 					hr8 = good
-				elif "light" in sleepquality:
+				elif "light" in sleepquality[2]:
 					hr8 = okay
 				else:
 					hr8 = bad			
-			if "17" in sleepquality:
-				if "rem" in sleepquality:
+			if "17" in sleepquality[1]:
+				if "rem" in sleepquality[2]:
 					hr9 = good
-				elif "light" in sleepquality:
+				elif "light" in sleepquality[2]:
 					hr9 = okay
 				else:
 					hr9 = bad
-			if "18" in sleepquality:
-				if "rem" in sleepquality:
+			if "18" in sleepquality[1]:
+				if "rem" in sleepquality[2]:
 					hr10 = good
-				elif "light" in sleepquality:
+				elif "light" in sleepquality[2]:
 					hr10 = okay
 				else:
 					hr10 = bad
-			if "19" in sleepquality:
-				if "rem" in sleepquality:
+			if "19" in sleepquality[1]:
+				if "rem" in sleepquality[2]:
 					hr11 = good
-				elif "light" in sleepquality:
+				elif "light" in sleepquality[2]:
 					hr11 = okay
 				else:
 					hr11 = bad			
-			if "20" in sleepquality:
-				if "rem" in sleepquality:
+			if "20" in sleepquality[1]:
+				if "rem" in sleepquality[2]:
 					hr12 = good
-				elif "light" in sleepquality:
+				elif "light" in sleepquality[2]:
 					hr12 = okay
 				else:
 					hr12 = bad
