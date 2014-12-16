@@ -1,3 +1,5 @@
+import time 
+import json 
 from adxl345 import ADXL345
 
 adxl345 = ADXL345()
@@ -24,9 +26,10 @@ while 1:
     if minute == "00":
         minutetrigger = 1
     else:
-        minutetrigger = 0
-
-    if hour > 22 or hour < 10:
+        #minutetrigger = 0
+	minutetrigger = 1
+	
+    if hour >= 21 or hour < 10:
         hourtrigger = 1
 
     # if it is between 10 pm and 10 am, and the minute is 00, start reading from accelerometer
@@ -60,11 +63,11 @@ while 1:
 
         #count = 600 is a minute
         # 36000 is an hour
-        if count == 36000:
+        if count == 100:
             count = 1
-            xavg = xsum / 36000.0
-            yavg = ysum / 36000.0
-            zavg = zsum / 36000.0
+            xavg = xsum / 100.0
+            yavg = ysum / 100.0
+            zavg = zsum / 100.0
             
             xavg = round(xavg, 2)
             yavg = round(yavg, 2)
@@ -96,7 +99,7 @@ while 1:
             print "\t" + str(rangex), str(rangey), str(rangez)
             print       
 
-            sleephistory[date][minute+":00:00"] = sleepquality
+            sleephistory[date] = {hour+":00:00": sleepquality}
 
             with open('sleephistory.json','w') as outfile:
                 json.dump(sleephistory, outfile, indent=4)
@@ -120,7 +123,7 @@ while 1:
         if minute == "00":
             minutetrigger = 1
         else:
-            minutetrigger = 0
+            minutetrigger = 1
 
-        if hour > 22 or hour < 10:
+        if hour >= 21 or hour < 10:
             hourtrigger = 1

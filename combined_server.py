@@ -109,11 +109,11 @@ def rabbitmq():
 
 accelerometerthread = Thread(target = accelerometer)
 accelerometerthread.start()
-accelerometerthread.join()
+#accelerometerthread.join()
 
 rabbitthread = Thread(target = rabbitmq)
 rabbitthread.start()
-rabbitthread.join()
+#rabbitthread.join()
 
 
 while 1:
