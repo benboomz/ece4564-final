@@ -28,7 +28,7 @@ minRight = 1
 #sleep quality
 na = 0
 bad = 1
-ok = 3
+okay = 3
 good = 2
 ########################################
 #hours
@@ -147,10 +147,10 @@ while True:
     for alarms in alarmlist:
     	if currentdateandtime == alarms:
     		anothercounter = anothercounter + 1
-			if anothercounter%1 == 0:
-				colortochange = (colortochange + 1) % 4
-				if colortochange == 0:
-					colortochange = 1
+		if anothercounter%1 == 0:
+			colortochange = (colortochange + 1) % 4
+			if colortochange == 0:
+				colortochange = 1
 	
 	listofcurrentsleepquality = []
 	for sleepquality in sleepqlist:
@@ -160,84 +160,84 @@ while True:
 					hr1 = good
 				elif "light" in sleepquality:
 					hr1 = okay
-				else
+				else:
 					hr1 = bad
 			if "22" in sleepquality:
 				if "rem" in sleepquality:
 					hr2 = good
 				elif "light" in sleepquality:
 					hr2 = okay
-				else
+				else:
 					hr2 = bad			
 			if "23" in sleepquality:
 				if "rem" in sleepquality:
 					hr3 = good
 				elif "light" in sleepquality:
 					hr3 = okay
-				else
+				else:
 					hr3 = bad
-			if "24" in sleepquality:
+			if "00" in sleepquality:
 				if "rem" in sleepquality:
 					hr4 = good
 				elif "light" in sleepquality:
 					hr4 = okay
-				else
+				else:
 					hr4 = bad
 			if "01" in sleepquality:
 				if "rem" in sleepquality:
 					hr5 = good
 				elif "light" in sleepquality:
 					hr5 = okay
-				else
+				else:
 					hr5 = bad			
 			if "02" in sleepquality:
 				if "rem" in sleepquality:
 					hr6 = good
 				elif "light" in sleepquality:
 					hr6 = okay
-				else
+				else:
 					hr6 = bad
 			if "03" in sleepquality:
 				if "rem" in sleepquality:
 					hr7 = good
 				elif "light" in sleepquality:
 					hr7 = okay
-				else
+				else:
 					hr7 = bad
 			if "04" in sleepquality:
 				if "rem" in sleepquality:
 					hr8 = good
 				elif "light" in sleepquality:
 					hr8 = okay
-				else
+				else:
 					hr8 = bad			
 			if "05" in sleepquality:
 				if "rem" in sleepquality:
 					hr9 = good
 				elif "light" in sleepquality:
 					hr9 = okay
-				else
+				else:
 					hr9 = bad
 			if "06" in sleepquality:
 				if "rem" in sleepquality:
 					hr10 = good
 				elif "light" in sleepquality:
 					hr10 = okay
-				else
+				else:
 					hr10 = bad
 			if "07" in sleepquality:
 				if "rem" in sleepquality:
 					hr11 = good
 				elif "light" in sleepquality:
 					hr11 = okay
-				else
+				else:
 					hr11 = bad			
 			if "08" in sleepquality:
 				if "rem" in sleepquality:
 					hr12 = good
 				elif "light" in sleepquality:
 					hr12 = okay
-				else
+				else:
 					hr12 = bad
 
 

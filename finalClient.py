@@ -6,7 +6,7 @@ import pika.channel
 import pika.exceptions
 import signal
 import json
-import tme
+import time
 from threading import Thread
 
 
