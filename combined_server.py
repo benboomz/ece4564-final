@@ -163,8 +163,6 @@ while 1:
         for alarms in alarmlist:
             f.write(alarms)
 
-
-    time.ctime()
     currenttime = time.strftime('%m/%d/%Y%l:%M %p') #11/30/14 5:34 PM
     print currenttime
 
