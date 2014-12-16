@@ -131,6 +131,7 @@ def set_pixel(x, y, color):
 ##################################################################
 #first digit
 anothercounter = 0
+trigger = 0
 while True: 
 
     with open("led_alarms.txt") as f:
@@ -141,17 +142,21 @@ while True:
 
     currentdate = time.strftime("%Y-%m-%d")
     currenttime = time.strftime("%I:%M %p")
-    currentdateandtime = time.strftime("%d/%m/%y %I:%M %p")
+    currentdateandtime = time.strftime("%m/%d/%Y %I:%M %p")
 
     #changes color of alarm if alarm goes off
     for alarms in alarmlist:
-    	if currentdateandtime == alarms:
+    	print currentdateandtime, alarms
+	if currentdateandtime.strip() == alarms.strip():
     		anothercounter = anothercounter + 1
-		if anothercounter%1 == 0:
-			colortochange = (colortochange + 1) % 4
-			if colortochange == 0:
-				colortochange = 1
-	
+		trigger = 1
+    if trigger:
+    	if anothercounter%1 == 0:
+		colortochange = (colortochange + 1) % 4
+		if colortochange == 0:
+			colortochange = 1
+
+    if "2014" in currentdate:
 	listofcurrentsleepquality = []
 	for listofsleepquality in sleepqlist:
 		if currentdate in listofsleepquality:
